@@ -930,7 +930,7 @@ Wire Wire Line
 	1525 4475 1825 4475
 Connection ~ 1525 4575
 Text GLabel 1825 4375 0    50   Input ~ 0
-data
+data2
 NoConn ~ 3225 4275
 NoConn ~ 1825 4675
 NoConn ~ 1825 4775
@@ -996,5 +996,5 @@ F 3 "" H 4125 5100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 4125 5150 2    50   Input ~ 0
-data
+data2
 $EndSCHEMATC
