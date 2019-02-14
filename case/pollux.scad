@@ -193,6 +193,22 @@ module middleframe () {
     }
 }
 
+module middleframe_lower () {
+    intersection () {
+        middleframe();
+        translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 18])
+            square([7 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 18)]);
+    }
+}
+
+module middleframe_upper () {
+    difference () {
+        middleframe();
+        translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 18])
+            square([7 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 18)]);
+    }
+}
+
 module topframe () {
     difference () {
         kadomaru(2) shape($wall_thickness);
@@ -223,57 +239,81 @@ module preview_pcb () {
 $acryl_color = [1, 1, 1, 0.7];
 
 module preview (diff = 0) {
-    translate([0, 0, 11.9 + diff * 2]) color([0.6, 0.6, 0.8]) preview_keycap();
-    translate([0, 0, 9 + diff * 3]) color($acryl_color) linear_extrude(3) topframe();
-    translate([0, 0, 7 + diff * 2]) color($acryl_color) linear_extrude(2) topplate();
+    translate([0, 0, 11.9 + diff * 3]) color([0.6, 0.6, 0.8]) preview_keycap();
+    translate([0, 0, 9 + diff * 4]) color($acryl_color) linear_extrude(3) topframe();
+    translate([0, 0, 7 + diff * 3]) color($acryl_color) linear_extrude(2) topplate();
     // 7 - 0.2 - 1.6 = 5.2
-//    translate([0, 0, 5.2 + diff * 2]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
-    translate([0, 0, 5.2 + diff * 2]) color([1, 1, 1]) preview_pcb_kicad();
-//    translate([0, 0, 2 + diff]) color([0.8, 0.8, 0.5]) preview_spacer();
-    translate([0, 0, 2 + diff]) color($acryl_color) linear_extrude(5) middleframe();
+//    translate([0, 0, 5.2 + diff * 3]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
+    translate([0, 0, 5.2 + diff * 3]) color([1, 1, 1]) preview_pcb_kicad();
+//    translate([0, 0, 2 + diff * 2]) color([0.8, 0.8, 0.5]) preview_spacer();
+    translate([0, 0, 4 + diff * 2]) color($acryl_color) linear_extrude(3) middleframe();
+    translate([0, 0, 2 + diff]) color($acryl_color) linear_extrude(2) middleframe();
     translate([0, 0, 0]) color($acryl_color) linear_extrude(2) bottomplate();
     translate([0, 0, -2 - diff]) color($acryl_color) linear_extrude(2) bottomplate2();
 }
 
 // ---- cut model
 
-bottom_padding = $wall_thickness + $pcb_grid * 18;
-left_padding   = $wall_thickness;
-total_height   = 4 * $unit_v + bottom_padding + $wall_thickness;
-total_width    = 7 * $unit_h + 2 * $wall_thickness;
+extra_bottom_height = $pcb_grid * 18;
+base_height         = 3 * $unit_v + 2 * $wall_thickness;
+base_width          = 7 * $unit_h + 2 * $wall_thickness;
+total_height        = base_height + $unit_v + extra_bottom_height;
+
+module pos_plate () {
+    translate([$wall_thickness, extra_bottom_height + $wall_thickness])
+        children();
+}
+
+module rotate_plate () {
+    translate([base_width, total_height])
+      rotate([0, 0, 180])
+        pos_plate()
+            children();
+}
 
 module acryl_2mm (guide = false) {
     difference () {
         if (guide) square([300, 300]);
-        translate([5, 5]) {
-            translate([left_padding, bottom_padding])
-              topplate();
-            translate([total_width - left_padding,  bottom_padding + total_height + 3])
-              mirror([1, 0, 0]) topplate();
-            translate([left_padding, bottom_padding + total_height * 2 + 6])
-              middleframe();
-            translate([total_width * 2 - left_padding + 3,  bottom_padding])
-              mirror([1, 0, 0]) middleframe();
-            translate([total_width * 2 - left_padding + 3,  bottom_padding + total_height + 3])
-              mirror([1, 0, 0]) bottomplate();
-            translate([total_width + left_padding + 3, bottom_padding + total_height * 2 + 6])
-              bottomplate();
+        translate([3, 3]) {
+            rotate_plate() topplate();
+            translate([0, base_height + 3])
+                pos_plate() bottomplate2();
+            translate([0, base_height + total_height + 6])
+                rotate_plate() bottomplate();
+            translate([0, 2 * base_height + total_height + 9])
+                pos_plate() middleframe_lower();
+            translate([0, 2 * base_height + total_height + 9 - 4])
+                pos_plate() middleframe_upper();
+            translate([base_width + 3, 0]) {
+                rotate_plate() topplate();
+                translate([0, base_height + 3])
+                    pos_plate() bottomplate2();
+                translate([0, base_height + total_height + 6])
+                    rotate_plate() bottomplate();
+                translate([0, 2 * base_height + total_height + 9])
+                    pos_plate() middleframe_lower();
+                translate([0, 2 * base_height + total_height + 9 - 4])
+                    pos_plate() middleframe_upper();
+            }
         }
     }
 }
 
 module acryl_3mm (guide = false) {
     difference () {
-        if (guide) square([300, 300]);
-        translate([5, 5]) {
-            translate([left_padding, bottom_padding])
-              topframe();
-            translate([total_width - left_padding,  bottom_padding + total_height + 3])
-              mirror([1, 0, 0]) topframe();
-            translate([left_padding, bottom_padding + total_height * 2 + 6])
-              middleframe();
-            translate([total_width * 2 - left_padding + 3,  bottom_padding])
-              mirror([1, 0, 0]) middleframe();
+        if (guide) square([200, 200]);
+        translate([1, 1]) {
+            rotate_plate() topframe();
+            translate([0, base_height + 2])
+                pos_plate() topframe();
+            translate([0, base_height + total_height + 4])
+                rotate_plate() middleframe_upper();
+            translate([12, base_height + total_height + 4 - 45])
+                pos_plate() middleframe_upper();
+            translate([132, 195]) rotate([0, 0, -90]) {
+                translate([-3, -33]) rotate_plate() middleframe_lower();
+                translate([59, 14]) pos_plate() middleframe_lower();
+            }
         }
     }
 }
