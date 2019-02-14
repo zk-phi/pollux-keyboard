@@ -130,7 +130,7 @@ module kadomaru (r) {
 }
 
 module skrew_holes () {
-    skrew_pos() circle(r = (2 + 0.1) / 2);
+    skrew_pos() circle(r = $screw_hole);
 }
 
 module switch_holes () {
