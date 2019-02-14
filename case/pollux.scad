@@ -154,6 +154,7 @@ module bottomplate () {
         kadomaru(2) difference () {
             shape($wall_thickness);
             trrs_contact();
+            promicro_contact();
         }
         promicro();
         union () {
