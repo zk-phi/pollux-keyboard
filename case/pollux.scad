@@ -213,15 +213,17 @@ module preview_pcb () {
     shape();
 }
 
-module preview () {
-    translate([0, 0, 11.9]) color([0.6, 0.6, 0.8]) preview_keycap();
-    translate([0, 0, 9]) color([1, 1, 1, 0.4]) linear_extrude(2) middleplate();
-    translate([0, 0, 7]) color([1, 1, 1, 0.4]) linear_extrude(2) topplate();
-//    translate([0, 0, 5.2]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
-    translate([0, 0, 5.2]) color([1, 1, 1]) preview_pcb_kicad();
-//    translate([0, 0, 2]) color([0.8, 0.8, 0.5]) preview_spacer();
-    translate([0, 0, 2]) color([1, 1, 1, 0.4]) linear_extrude(5) middleplate();
-    translate([0, 0, 0]) color([1, 1, 1, 0.4]) linear_extrude(2) bottomplate();
+module preview (diff = 0) {
+    translate([0, 0, 11.9 + diff * 2]) color([0.6, 0.6, 0.8]) preview_keycap();
+    translate([0, 0, 9 + diff * 3]) color([1, 1, 1, 0.5]) linear_extrude(2) topframe();
+    translate([0, 0, 7 + diff * 2]) color([1, 1, 1, 0.5]) linear_extrude(2) topplate();
+    // 7 - 0.2 - 1.6 = 5.2
+//    translate([0, 0, 5.2 + diff * 2]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
+    translate([0, 0, 5.2 + diff * 2]) color([1, 1, 1]) preview_pcb_kicad();
+//    translate([0, 0, 2 + diff]) color([0.8, 0.8, 0.5]) preview_spacer();
+    translate([0, 0, 2 + diff]) color([1, 1, 1, 0.5]) linear_extrude(5) middleframe(true);
+    translate([0, 0, 0]) color([1, 1, 1, 0.5]) linear_extrude(2) bottomplate();
+    translate([0, 0, -2 - diff]) color([1, 1, 1, 0.5]) linear_extrude(2) bottomplate2();
 }
 
 preview();
