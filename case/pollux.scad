@@ -6,10 +6,16 @@ $pcb_grid = 0.25;
 
 $100mil = 2.54;
 
+// ---- positions
+$trrs_bottom_pos = 2.5 * $unit_v + 10 * $pcb_grid;
+$reset_bottom_pos = 2.5 * $unit_v - 15 * $pcb_grid;
+$reset_left_pos = 6.5 * $unit_h + 18 * $pcb_grid;
+
 // ---- screw hole size
 $screw_hole = (2 + 0.1) / 2;
 
 // ---- wall size
+// TODO: add screws around the contact holes
 $wall_thickness = 5;
 $pcb_slop = 0.1;
 $screw_position =  $wall_thickness / 2;
@@ -18,11 +24,15 @@ $screw_position =  $wall_thickness / 2;
 $switch_hole = 14;
 
 // ---- bottom plate placements
-$slop = 1;
+// TODO: verify with the datasheets
+$slop = 1.5;
 $promicro_height  = 7 * $100mil + $slop;
-$promicro_width = 35 + $slop / 2;
-$trrs_width = 6;
-$trrs_height = 14;
+$promicro_width = 13 * $100mil + $slop;
+$trrs_height = 6 + $slop;
+$trrs_width = 14 + $slop / 2;
+$reset_height = 3.5 + $slop;
+$reset_width = 6 + $slop;
+$promicro_contact_height = 13; // incl. slop
 
 // ---- case shape
 
@@ -33,6 +43,27 @@ module shape (pad = 0) {
         [6.5 * $unit_h + pad - 2 * $pcb_grid, -pad - $pcb_grid * 18],
         [4.5 * $unit_h - pad, -pad - $pcb_grid * 18],
         [4 * $unit_h - pad, $unit_v - pad], [- pad, $unit_v - pad]
+    ]);
+}
+
+module shape_pcb (pad = 0) {
+    polygon([
+        [- pad, 4 * $unit_v + pad], [7 * $unit_h + pad, 4 * $unit_v + pad],
+        // trrs & switch (left)
+        [7 * $unit_h + pad, 2.5 * $unit_v + 44 * $pcb_grid + pad],
+        [7 * $unit_h + 12 * $pcb_grid + pad, 2.5 * $unit_v + 33 * $pcb_grid + pad],
+        [7 * $unit_h + 12 * $pcb_grid + pad, 2.5 * $unit_v - 33 * $pcb_grid - pad],
+        [7 * $unit_h + pad, 2.5 * $unit_v - 44 * $pcb_grid - pad],
+        // ----
+        [7 * $unit_h + pad, $unit_v - pad],
+        [6.5 * $unit_h + pad - 2 * $pcb_grid, -pad - $pcb_grid * 18],
+        [4.5 * $unit_h - pad, -pad - $pcb_grid * 18],
+        [4 * $unit_h - pad, $unit_v - pad], [- pad, $unit_v - pad],
+        // trrs & switch (right)
+        [- pad, 2.5 * $unit_v + 44 * $pcb_grid + pad],
+        [- 12 * $pcb_grid - pad, 2.5 * $unit_v + 33 * $pcb_grid + pad],
+        [- 12 * $pcb_grid - pad, 2.5 * $unit_v - 33 * $pcb_grid - pad],
+        [- pad, 2.5 * $unit_v - 44 * $pcb_grid - pad],
     ]);
 }
 
@@ -59,7 +90,33 @@ module skrew_pos () {
 }
 
 module promicro () {
-    // to be implemented
+    translate([$promicro_width / 2 - 12 * $pcb_grid, 2.5 * $unit_v])
+        square([$promicro_width, $promicro_height], center = true);
+}
+
+module promicro_contact () {
+    translate([- $wall_thickness / 2, 2.5 * $unit_v])
+        square([$wall_thickness, $promicro_contact_height], center = true);
+}
+
+module trrs_contact () {
+    translate([7 * $unit_h + $wall_thickness / 2, $trrs_bottom_pos])
+        square([$wall_thickness, $trrs_height], center = true);
+}
+
+module trrs () {
+    translate([7 * $unit_h + $wall_thickness - $trrs_width / 2, $trrs_bottom_pos])
+        square([$trrs_width, $trrs_height], center = true);
+}
+
+module reset_sw () {
+    translate([$reset_left_pos, $reset_bottom_pos])
+        square([$reset_width, $reset_height], center = true);
+}
+
+module reset_tsumayouji () {
+    translate([$reset_left_pos, $reset_bottom_pos])
+        circle(d = 2);
 }
 
 // ---- model
@@ -89,15 +146,54 @@ module single_spacer () {
 }
 
 module bottomplate () {
-    difference () { kadomaru(2) shape($wall_thickness); promicro(); skrew_holes(); }
+    difference () {
+        kadomaru(2) difference () {
+            shape($wall_thickness);
+            trrs_contact();
+        }
+        promicro();
+        union () {
+            trrs();
+            reset_sw();
+        }
+        skrew_holes();
+    }
+}
+
+module bottomplate2 () {
+    difference () {
+        kadomaru(2) shape($wall_thickness);
+        skrew_holes();
+        reset_tsumayouji();
+    }
 }
 
 module topplate () {
-    difference () { kadomaru(2) shape($wall_thickness); switch_holes(); skrew_holes(); }
+    difference () {
+        kadomaru(2) shape($wall_thickness);
+        switch_holes();
+        skrew_holes();
+    }
 }
 
-module middleplate () {
-    difference () { kadomaru(2) shape($wall_thickness); shape($pcb_slop  ); skrew_holes(); }
+module middleframe () {
+    difference () {
+        kadomaru(2) difference () {
+            shape($wall_thickness);
+            trrs_contact();
+            promicro_contact();
+        }
+        shape_pcb($pcb_slop);
+        skrew_holes();
+    }
+}
+
+module topframe () {
+    difference () {
+        kadomaru(2) shape($wall_thickness);
+        shape($pcb_slop);
+        skrew_holes();
+    }
 }
 
 module preview_keycap () {
