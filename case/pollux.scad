@@ -218,18 +218,66 @@ module preview_pcb () {
     shape();
 }
 
+// ---- preview model
+
+$acryl_color = [1, 1, 1, 0.7];
+
 module preview (diff = 0) {
     translate([0, 0, 11.9 + diff * 2]) color([0.6, 0.6, 0.8]) preview_keycap();
-    translate([0, 0, 9 + diff * 3]) color([1, 1, 1, 0.5]) linear_extrude(2) topframe();
-    translate([0, 0, 7 + diff * 2]) color([1, 1, 1, 0.5]) linear_extrude(2) topplate();
+    translate([0, 0, 9 + diff * 3]) color($acryl_color) linear_extrude(3) topframe();
+    translate([0, 0, 7 + diff * 2]) color($acryl_color) linear_extrude(2) topplate();
     // 7 - 0.2 - 1.6 = 5.2
 //    translate([0, 0, 5.2 + diff * 2]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
     translate([0, 0, 5.2 + diff * 2]) color([1, 1, 1]) preview_pcb_kicad();
 //    translate([0, 0, 2 + diff]) color([0.8, 0.8, 0.5]) preview_spacer();
-    translate([0, 0, 2 + diff]) color([1, 1, 1, 0.5]) linear_extrude(5) middleframe(true);
-    translate([0, 0, 0]) color([1, 1, 1, 0.5]) linear_extrude(2) bottomplate();
-    translate([0, 0, -2 - diff]) color([1, 1, 1, 0.5]) linear_extrude(2) bottomplate2();
+    translate([0, 0, 2 + diff]) color($acryl_color) linear_extrude(5) middleframe();
+    translate([0, 0, 0]) color($acryl_color) linear_extrude(2) bottomplate();
+    translate([0, 0, -2 - diff]) color($acryl_color) linear_extrude(2) bottomplate2();
 }
 
+// ---- cut model
+
+bottom_padding = $wall_thickness + $pcb_grid * 18;
+left_padding   = $wall_thickness;
+total_height   = 4 * $unit_v + bottom_padding + $wall_thickness;
+total_width    = 7 * $unit_h + 2 * $wall_thickness;
+
+module acryl_2mm (guide = false) {
+    difference () {
+        if (guide) square([300, 300]);
+        translate([5, 5]) {
+            translate([left_padding, bottom_padding])
+              topplate();
+            translate([total_width - left_padding,  bottom_padding + total_height + 3])
+              mirror([1, 0, 0]) topplate();
+            translate([left_padding, bottom_padding + total_height * 2 + 6])
+              middleframe();
+            translate([total_width * 2 - left_padding + 3,  bottom_padding])
+              mirror([1, 0, 0]) middleframe();
+            translate([total_width * 2 - left_padding + 3,  bottom_padding + total_height + 3])
+              mirror([1, 0, 0]) bottomplate();
+            translate([total_width + left_padding + 3, bottom_padding + total_height * 2 + 6])
+              bottomplate();
+        }
+    }
+}
+
+module acryl_3mm (guide = false) {
+    difference () {
+        if (guide) square([300, 300]);
+        translate([5, 5]) {
+            translate([left_padding, bottom_padding])
+              topframe();
+            translate([total_width - left_padding,  bottom_padding + total_height + 3])
+              mirror([1, 0, 0]) topframe();
+            translate([left_padding, bottom_padding + total_height * 2 + 6])
+              middleframe();
+            translate([total_width * 2 - left_padding + 3,  bottom_padding])
+              mirror([1, 0, 0]) middleframe();
+        }
+    }
+}
+
+//acryl_2mm();
 preview();
 translate([280, 0, 0]) mirror([1, 0, 0]) preview();
