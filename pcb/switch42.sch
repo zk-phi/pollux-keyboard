@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:switch42-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -53,7 +52,7 @@ U 1 1 5C22C971
 P 5150 1500
 F 0 "SW2" H 5150 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 5150 1664 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 5150 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5150 1500 50  0001 C CNN
 F 3 "" H 5150 1500 50  0000 C CNN
 	1    5150 1500
 	1    0    0    -1  
@@ -64,7 +63,7 @@ U 1 1 5C22CA22
 P 5950 1500
 F 0 "SW5" H 5950 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 5950 1664 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 5950 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5950 1500 50  0001 C CNN
 F 3 "" H 5950 1500 50  0000 C CNN
 	1    5950 1500
 	1    0    0    -1  
@@ -75,7 +74,7 @@ U 1 1 5C22CA58
 P 6750 1500
 F 0 "SW8" H 6750 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 6750 1664 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 6750 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 6750 1500 50  0001 C CNN
 F 3 "" H 6750 1500 50  0000 C CNN
 	1    6750 1500
 	1    0    0    -1  
@@ -86,7 +85,7 @@ U 1 1 5C22CA92
 P 7550 1500
 F 0 "SW11" H 7550 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 7550 1664 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 7550 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 7550 1500 50  0001 C CNN
 F 3 "" H 7550 1500 50  0000 C CNN
 	1    7550 1500
 	1    0    0    -1  
@@ -97,7 +96,7 @@ U 1 1 5C22CAFE
 P 8350 1500
 F 0 "SW14" H 8350 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 8350 1664 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 8350 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 8350 1500 50  0001 C CNN
 F 3 "" H 8350 1500 50  0000 C CNN
 	1    8350 1500
 	1    0    0    -1  
@@ -108,7 +107,7 @@ U 1 1 5C22CB3A
 P 9150 1500
 F 0 "SW17" H 9150 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 1664 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 9150 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 1500 50  0001 C CNN
 F 3 "" H 9150 1500 50  0000 C CNN
 	1    9150 1500
 	1    0    0    -1  
@@ -187,7 +186,7 @@ U 1 1 5C22DF47
 P 5150 2150
 F 0 "SW3" H 5150 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 5150 2314 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 5150 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5150 2150 50  0001 C CNN
 F 3 "" H 5150 2150 50  0000 C CNN
 	1    5150 2150
 	1    0    0    -1  
@@ -198,7 +197,7 @@ U 1 1 5C22DF4E
 P 5950 2150
 F 0 "SW6" H 5950 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 5950 2314 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 5950 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5950 2150 50  0001 C CNN
 F 3 "" H 5950 2150 50  0000 C CNN
 	1    5950 2150
 	1    0    0    -1  
@@ -209,7 +208,7 @@ U 1 1 5C22DF55
 P 6750 2150
 F 0 "SW9" H 6750 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 6750 2314 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 6750 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 6750 2150 50  0001 C CNN
 F 3 "" H 6750 2150 50  0000 C CNN
 	1    6750 2150
 	1    0    0    -1  
@@ -220,7 +219,7 @@ U 1 1 5C22DF5C
 P 7550 2150
 F 0 "SW12" H 7550 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 7550 2314 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 7550 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 7550 2150 50  0001 C CNN
 F 3 "" H 7550 2150 50  0000 C CNN
 	1    7550 2150
 	1    0    0    -1  
@@ -231,7 +230,7 @@ U 1 1 5C22DF63
 P 8350 2150
 F 0 "SW15" H 8350 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 8350 2314 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 8350 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 8350 2150 50  0001 C CNN
 F 3 "" H 8350 2150 50  0000 C CNN
 	1    8350 2150
 	1    0    0    -1  
@@ -242,7 +241,7 @@ U 1 1 5C22DF6A
 P 9150 2150
 F 0 "SW18" H 9150 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 2314 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 9150 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 2150 50  0001 C CNN
 F 3 "" H 9150 2150 50  0000 C CNN
 	1    9150 2150
 	1    0    0    -1  
@@ -321,7 +320,7 @@ U 1 1 5C22E1E3
 P 5150 2800
 F 0 "SW4" H 5150 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 5150 2964 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 5150 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5150 2800 50  0001 C CNN
 F 3 "" H 5150 2800 50  0000 C CNN
 	1    5150 2800
 	1    0    0    -1  
@@ -332,7 +331,7 @@ U 1 1 5C22E1EA
 P 5950 2800
 F 0 "SW7" H 5950 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 5950 2964 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 5950 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5950 2800 50  0001 C CNN
 F 3 "" H 5950 2800 50  0000 C CNN
 	1    5950 2800
 	1    0    0    -1  
@@ -343,7 +342,7 @@ U 1 1 5C22E1F1
 P 6750 2800
 F 0 "SW10" H 6750 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 6750 2964 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 6750 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 6750 2800 50  0001 C CNN
 F 3 "" H 6750 2800 50  0000 C CNN
 	1    6750 2800
 	1    0    0    -1  
@@ -354,7 +353,7 @@ U 1 1 5C22E1F8
 P 7550 2800
 F 0 "SW13" H 7550 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 7550 2964 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 7550 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 7550 2800 50  0001 C CNN
 F 3 "" H 7550 2800 50  0000 C CNN
 	1    7550 2800
 	1    0    0    -1  
@@ -365,7 +364,7 @@ U 1 1 5C22E1FF
 P 8350 2800
 F 0 "SW16" H 8350 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 8350 2964 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 8350 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 8350 2800 50  0001 C CNN
 F 3 "" H 8350 2800 50  0000 C CNN
 	1    8350 2800
 	1    0    0    -1  
@@ -376,7 +375,7 @@ U 1 1 5C22E206
 P 9150 2800
 F 0 "SW19" H 9150 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 2964 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 9150 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 2800 50  0001 C CNN
 F 3 "" H 9150 2800 50  0000 C CNN
 	1    9150 2800
 	1    0    0    -1  
@@ -732,7 +731,7 @@ U 1 1 5C4E7E26
 P 9950 1500
 F 0 "SW21" H 9950 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 9950 1664 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 9950 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9950 1500 50  0001 C CNN
 F 3 "" H 9950 1500 50  0000 C CNN
 	1    9950 1500
 	1    0    0    -1  
@@ -754,7 +753,7 @@ U 1 1 5C4F07F9
 P 9950 2800
 F 0 "SW22" H 9950 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 9950 2964 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 9950 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9950 2800 50  0001 C CNN
 F 3 "" H 9950 2800 50  0000 C CNN
 	1    9950 2800
 	1    0    0    -1  
@@ -792,7 +791,7 @@ U 1 1 5C5DD285
 P 9950 3450
 F 0 "SW23" H 9950 3705 50  0000 C CNN
 F 1 "SW_PUSH" H 9950 3614 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 9950 3450 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9950 3450 50  0001 C CNN
 F 3 "" H 9950 3450 50  0000 C CNN
 	1    9950 3450
 	1    0    0    -1  
@@ -814,7 +813,7 @@ U 1 1 5C5DE165
 P 9150 3450
 F 0 "SW20" H 9150 3705 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 3614 50  0000 C CNN
-F 2 "SMKJP:SW_kailh_pg1350_1u_Reversible_short" H 9150 3450 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 3450 50  0001 C CNN
 F 3 "" H 9150 3450 50  0000 C CNN
 	1    9150 3450
 	1    0    0    -1  
