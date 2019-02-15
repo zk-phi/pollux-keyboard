@@ -41,7 +41,7 @@ module shape (pad = 0) {
         [- pad, 4 * $unit_v + pad], [7 * $unit_h + pad, 4 * $unit_v + pad],
         [7 * $unit_h + pad, $unit_v - pad],
         [6.5 * $unit_h + pad - 2 * $pcb_grid, -pad - $pcb_grid * 18],
-        [4.5 * $unit_h - pad, -pad - $pcb_grid * 18],
+        [4.5 * $unit_h - pad + 2 * $pcb_grid, -pad - $pcb_grid * 18],
         [4 * $unit_h - pad, $unit_v - pad], [- pad, $unit_v - pad]
     ]);
 }
@@ -57,7 +57,7 @@ module shape_pcb (pad = 0) {
         // ----
         [7 * $unit_h + pad, $unit_v - pad],
         [6.5 * $unit_h + pad - 2 * $pcb_grid, -pad - $pcb_grid * 18],
-        [4.5 * $unit_h - pad, -pad - $pcb_grid * 18],
+        [4.5 * $unit_h - pad + 2 * $pcb_grid, -pad - $pcb_grid * 18],
         [4 * $unit_h - pad, $unit_v - pad], [- pad, $unit_v - pad],
         // trrs & switch (right)
         [- pad, 2.5 * $unit_v + 44 * $pcb_grid + pad],
@@ -86,7 +86,7 @@ module skrew_pos () {
     translate([7 * $unit_h + $screw_position, 4 * $unit_v + $screw_position]) children();
     translate([7 * $unit_h + $screw_position, $unit_v - $screw_position]) children();
     translate([6.5 * $unit_h + $screw_position,  - $pcb_grid * 18 - $screw_position]) children();
-    translate([4.5 * $unit_h - $screw_position, - $pcb_grid * 18 - $screw_position]) children();
+    translate([4.5 * $unit_h - $screw_position + 2 * $pcb_grid, - $pcb_grid * 18 - $screw_position]) children();
     translate([- $screw_position, 2.5 * $unit_v - 44 * $pcb_grid - $screw_position]) children();
     translate([- $screw_position, 2.5 * $unit_v + 44 * $pcb_grid + $screw_position]) children();
     translate([7 * $unit_h + $screw_position, 2.5 * $unit_v - 44 * $pcb_grid - $screw_position]) children();
