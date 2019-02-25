@@ -16,6 +16,7 @@ $screw_hole = (2 + 0.1) / 2;
 
 // ---- wall size
 $wall_thickness = 5;
+$kadomaru_r = 2;
 $pcb_slop = 0.1;
 $screw_position =  $wall_thickness / 2;
 
@@ -150,7 +151,7 @@ module single_spacer () {
 
 module bottomplate () {
     difference () {
-        kadomaru(2) difference () {
+        kadomaru($kadomaru_r) difference () {
             shape($wall_thickness);
             trrs_contact();
             promicro_contact();
@@ -166,7 +167,7 @@ module bottomplate () {
 
 module bottomplate2 () {
     difference () {
-        kadomaru(2) shape($wall_thickness);
+        kadomaru($kadomaru_r) shape($wall_thickness);
         skrew_holes();
         reset_tsumayouji();
     }
@@ -174,7 +175,7 @@ module bottomplate2 () {
 
 module topplate () {
     difference () {
-        kadomaru(2) shape($wall_thickness);
+        kadomaru($kadomaru_r) shape($wall_thickness);
         switch_holes();
         skrew_holes();
     }
@@ -182,7 +183,7 @@ module topplate () {
 
 module middleframe () {
     difference () {
-        kadomaru(2) difference () {
+        kadomaru($kadomaru_r) difference () {
             shape($wall_thickness);
             trrs_contact();
             promicro_contact();
@@ -210,7 +211,7 @@ module middleframe_upper () {
 
 module topframe () {
     difference () {
-        kadomaru(2) shape($wall_thickness);
+        kadomaru($kadomaru_r) shape($wall_thickness);
         shape($pcb_slop);
         skrew_holes();
     }
