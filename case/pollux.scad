@@ -15,7 +15,6 @@ $reset_left_pos = 6.5 * $unit_h + 18 * $pcb_grid;
 $screw_hole = (2 + 0.1) / 2;
 
 // ---- wall size
-// TODO: add screws around the contact holes
 $wall_thickness = 5;
 $pcb_slop = 0.1;
 $screw_position =  $wall_thickness / 2;
