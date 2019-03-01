@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 27)
+    (drawings 28)
     (tracks 694)
     (zones 0)
     (modules 52)
@@ -214,7 +214,7 @@
   )
 
   (module pollux:icon (layer F.Cu) (tedit 0) (tstamp 5C660C1E)
-    (at 115.0068 119.327)
+    (at 115.0068 119.827)
     (fp_text reference G*** (at 0 0) (layer F.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)))
     )
@@ -1504,7 +1504,7 @@
   )
 
   (module pollux:icon (layer B.Cu) (tedit 0) (tstamp 5C6606E8)
-    (at 115.0068 119.327 180)
+    (at 115.0068 119.827 180)
     (fp_text reference G*** (at 0 0 180) (layer B.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)) (justify mirror))
     )
@@ -2170,7 +2170,7 @@
     )
   )
 
-  (module phi-kbd-library:Choc_1.00u-narrow-reversible (layer F.Cu) (tedit 5C660F1F) (tstamp 5C7ED998)
+  (module phi-kbd-library:Choc_1.00u-narrow-reversible (layer F.Cu) (tedit 5C660F1F) (tstamp 5C7528DB)
     (at 137.2568 117.077)
     (path /5C22E1F1)
     (fp_text reference SW10 (at 0 -8.5) (layer F.Fab)
@@ -2800,6 +2800,9 @@
     )
   )
 
+  (gr_text r1 (at 137.7568 123.077) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (dimension 72.5 (width 0.3) (layer F.SilkS)
     (gr_text "72.500 mm" (at 235.3568 110.827 90) (layer F.SilkS)
       (effects (font (size 1.5 1.5) (thickness 0.3)))
