@@ -93,33 +93,39 @@ module skrew_pos () {
     translate([7 * $unit_h + $screw_position, 2.5 * $unit_v + 44 * $pcb_grid + $screw_position]) children();
 }
 
-module promicro () {
-    translate([$promicro_width / 2 - 12 * $pcb_grid, 2.5 * $unit_v])
+module promicro (right) {
+    pos_diff = $promicro_width / 2 - 12 * $pcb_grid;
+    x_pos = right ? 7 * $unit_h - pos_diff : pos_diff;
+    translate([x_pos, 2.5 * $unit_v])
         square([$promicro_width, $promicro_height], center = true);
 }
 
-module promicro_contact () {
-    translate([- $wall_thickness / 2, 2.5 * $unit_v])
+module promicro_contact (right) {
+    x_pos = right ? 7 * $unit_h + $wall_thickness / 2 : - $wall_thickness / 2;
+    translate([x_pos, 2.5 * $unit_v])
         square([$wall_thickness, $promicro_contact_height], center = true);
 }
 
-module trrs_contact () {
-    translate([7 * $unit_h + $wall_thickness / 2, $trrs_bottom_pos])
+module trrs_contact (right) {
+    x_pos = right ? - $wall_thickness / 2 : 7 * $unit_h + $wall_thickness / 2;
+    translate([x_pos, $trrs_bottom_pos])
         square([$wall_thickness, $trrs_height], center = true);
 }
 
-module trrs () {
-    translate([7 * $unit_h + $wall_thickness - $trrs_width / 2, $trrs_bottom_pos])
+module trrs (right) {
+    pos_diff = $trrs_width / 2 - $wall_thickness;
+    x_pos = right ? pos_diff : 7 * $unit_h - pos_diff;
+    translate([x_pos, $trrs_bottom_pos])
         square([$trrs_width, $trrs_height], center = true);
 }
 
-module reset_sw () {
-    translate([$reset_left_pos, $reset_bottom_pos])
+module reset_sw (right) {
+    translate([right ? 7 * $unit_h - $reset_left_pos : $reset_left_pos, $reset_bottom_pos])
         square([$reset_width, $reset_height], center = true);
 }
 
-module reset_tsumayouji () {
-    translate([$reset_left_pos, $reset_bottom_pos])
+module reset_tsumayouji (right) {
+    translate([right ? 7 * $unit_h - $reset_left_pos : $reset_left_pos, $reset_bottom_pos])
         circle(d = 2);
 }
 
@@ -149,27 +155,27 @@ module single_spacer () {
     cylinder(d = 5, h = 5);
 }
 
-module bottomplate () {
+module bottomplate (right = false) {
     difference () {
         kadomaru($kadomaru_r) difference () {
             shape($wall_thickness);
-            trrs_contact();
-            promicro_contact();
+            trrs_contact(right);
+            promicro_contact(right);
         }
-        promicro();
+        promicro(right);
         union () {
-            trrs();
-            reset_sw();
+            trrs(right);
+            reset_sw(right);
         }
         skrew_holes();
     }
 }
 
-module bottomplate2 () {
+module bottomplate2 (right = false) {
     difference () {
         kadomaru($kadomaru_r) shape($wall_thickness);
         skrew_holes();
-        reset_tsumayouji();
+        reset_tsumayouji(right);
     }
 }
 
@@ -181,29 +187,29 @@ module topplate () {
     }
 }
 
-module middleframe () {
+module middleframe (right = false) {
     difference () {
         kadomaru($kadomaru_r) difference () {
             shape($wall_thickness);
-            trrs_contact();
-            promicro_contact();
+            trrs_contact(right);
+            promicro_contact(right);
         }
         shape_pcb($pcb_slop);
         skrew_holes();
     }
 }
 
-module middleframe_lower () {
+module middleframe_lower (right) {
     intersection () {
-        middleframe();
+        middleframe(right);
         translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 18])
             square([7 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 18)]);
     }
 }
 
-module middleframe_upper () {
+module middleframe_upper (right) {
     difference () {
-        middleframe();
+        middleframe(right);
         translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 18])
             square([7 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 18)]);
     }
@@ -238,7 +244,7 @@ module preview_pcb () {
 
 $acryl_color = [1, 1, 1, 0.7];
 
-module preview (diff = 0) {
+module preview (diff = 0, right = false) {
     translate([0, 0, 11.9 + diff * 3]) color([0.6, 0.6, 0.8]) preview_keycap();
     translate([0, 0, 9 + diff * 4]) color($acryl_color) linear_extrude(3) topframe();
     translate([0, 0, 7 + diff * 3]) color($acryl_color) linear_extrude(2) topplate();
@@ -246,10 +252,10 @@ module preview (diff = 0) {
 //    translate([0, 0, 5.2 + diff * 3]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
     translate([0, 0, 5.2 + diff * 3]) color([1, 1, 1]) preview_pcb_kicad();
 //    translate([0, 0, 2 + diff * 2]) color([0.8, 0.8, 0.5]) preview_spacer();
-    translate([0, 0, 4 + diff * 2]) color($acryl_color) linear_extrude(3) middleframe();
-    translate([0, 0, 2 + diff]) color($acryl_color) linear_extrude(2) middleframe();
-    translate([0, 0, 0]) color($acryl_color) linear_extrude(2) bottomplate();
-    translate([0, 0, -2 - diff]) color($acryl_color) linear_extrude(2) bottomplate2();
+    translate([0, 0, 4 + diff * 2]) color($acryl_color) linear_extrude(3) middleframe(right);
+    translate([0, 0, 2 + diff]) color($acryl_color) linear_extrude(2) middleframe(right);
+    translate([0, 0, 0]) color($acryl_color) linear_extrude(2) bottomplate(right);
+    translate([0, 0, -2 - diff]) color($acryl_color) linear_extrude(2) bottomplate2(right);
 }
 
 // ---- cut model
@@ -287,13 +293,13 @@ module acryl_2mm (guide = false) {
             translate([base_width + 3, 0]) {
                 rotate_plate() topplate();
                 translate([0, base_height + 3])
-                    pos_plate() bottomplate2();
+                    pos_plate() bottomplate2(true);
                 translate([0, base_height + total_height + 6])
-                    rotate_plate() bottomplate();
+                    rotate_plate() bottomplate(true);
                 translate([0, 2 * base_height + total_height + 9])
-                    pos_plate() middleframe_lower();
+                    pos_plate() middleframe_lower(true);
                 translate([0, 2 * base_height + total_height + 9 - 4])
-                    pos_plate() middleframe_upper();
+                    pos_plate() middleframe_upper(true);
             }
         }
     }
@@ -309,10 +315,10 @@ module acryl_3mm (guide = false) {
             translate([0, base_height + total_height + 4])
                 rotate_plate() middleframe_upper();
             translate([12, base_height + total_height + 4 - 45])
-                pos_plate() middleframe_upper();
+                pos_plate() middleframe_upper(true);
             translate([132, 195]) rotate([0, 0, -90]) {
                 translate([-3, -33]) rotate_plate() middleframe_lower();
-                translate([59, 14]) pos_plate() middleframe_lower();
+                translate([59, 14]) pos_plate() middleframe_lower(true);
             }
         }
     }
