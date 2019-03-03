@@ -87,6 +87,7 @@ module skrew_pos () {
     translate([7 * $unit_h + $screw_position, $unit_v - $screw_position]) children();
     translate([6.5 * $unit_h + $screw_position,  - $pcb_grid * 18 - $screw_position]) children();
     translate([4.5 * $unit_h - $screw_position + 2 * $pcb_grid, - $pcb_grid * 18 - $screw_position]) children();
+    translate([4 * $unit_h - $screw_position, $unit_v - $screw_position]) children();
     translate([- $screw_position, 2.5 * $unit_v - 44 * $pcb_grid - $screw_position]) children();
     translate([- $screw_position, 2.5 * $unit_v + 44 * $pcb_grid + $screw_position]) children();
     translate([7 * $unit_h + $screw_position, 2.5 * $unit_v - 44 * $pcb_grid - $screw_position]) children();
