@@ -16,7 +16,7 @@ $screw_hole = (2 + 0.1) / 2;
 
 // ---- wall size
 $kadomaru_r = 2;
-$pcb_slop = 0.1;
+$pcb_slop = 0.5;
 $wall_thickness = 5 + $pcb_slop;
 $screw_position =  ($wall_thickness + $pcb_slop) / 2;
 
