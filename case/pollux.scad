@@ -15,9 +15,9 @@ $reset_left_pos = 6.5 * $unit_h + 18 * $pcb_grid;
 $screw_hole = (2 + 0.1) / 2;
 
 // ---- wall size
-$wall_thickness = 5;
 $kadomaru_r = 2;
 $pcb_slop = 0.1;
+$wall_thickness = 5 + $pcb_slop;
 $screw_position =  ($wall_thickness + $pcb_slop) / 2;
 
 // ---- top plate placements
