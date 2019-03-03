@@ -150,11 +150,6 @@ module single_keycap () {
     }
 }
 
-module single_spacer () {
-    $fn = 6;
-    cylinder(d = 5, h = 5);
-}
-
 module bottomplate (right = false) {
     difference () {
         kadomaru($kadomaru_r) difference () {
@@ -227,10 +222,6 @@ module preview_keycap () {
     switch_pos() single_keycap();
 }
 
-module preview_spacer () {
-    skrew_pos() single_spacer();
-}
-
 module preview_pcb_kicad () {
     translate([0.5 * $unit_h, 3.5 * $unit_v, 1.6])
         import("../pcb/switch42.stl");
@@ -251,7 +242,6 @@ module preview (diff = 0, right = false) {
     // 7 - 0.2 - 1.6 = 5.2
 //    translate([0, 0, 5.2 + diff * 3]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
     translate([0, 0, 5.2 + diff * 3]) color([1, 1, 1]) preview_pcb_kicad();
-//    translate([0, 0, 2 + diff * 2]) color([0.8, 0.8, 0.5]) preview_spacer();
     translate([0, 0, 4 + diff * 2]) color($acryl_color) linear_extrude(3) middleframe(right);
     translate([0, 0, 2 + diff]) color($acryl_color) linear_extrude(2) middleframe(right);
     translate([0, 0, 0]) color($acryl_color) linear_extrude(2) bottomplate(right);
