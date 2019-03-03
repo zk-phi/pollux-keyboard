@@ -18,7 +18,7 @@ $screw_hole = (2 + 0.1) / 2;
 $wall_thickness = 5;
 $kadomaru_r = 2;
 $pcb_slop = 0.1;
-$screw_position =  $wall_thickness / 2;
+$screw_position =  ($wall_thickness + $pcb_slop) / 2;
 
 // ---- top plate placements
 $switch_hole = 14;
