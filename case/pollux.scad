@@ -275,40 +275,33 @@ module acryl_2mm (guide = false) {
             translate([0, base_height + 3])
                 pos_plate() bottomplate2();
             translate([0, base_height + total_height + 6])
-                rotate_plate() bottomplate();
-            translate([0, 2 * base_height + total_height + 9])
-                pos_plate() middleframe_lower();
-            translate([0, 2 * base_height + total_height + 9 - 4])
-                pos_plate() middleframe_upper();
+                rotate_plate() topplate();
             translate([base_width + 3, 0]) {
                 rotate_plate() topplate();
                 translate([0, base_height + 3])
                     pos_plate() bottomplate2(true);
                 translate([0, base_height + total_height + 6])
-                    rotate_plate() bottomplate(true);
-                translate([0, 2 * base_height + total_height + 9])
-                    pos_plate() middleframe_lower(true);
-                translate([0, 2 * base_height + total_height + 9 - 4])
-                    pos_plate() middleframe_upper(true);
+                    rotate_plate() topplate();
             }
         }
     }
 }
 
-module acryl_3mm (guide = false) {
+module acryl_4mm (guide = false) {
     difference () {
-        if (guide) square([200, 200]);
-        translate([1, 1]) {
+        if (guide) square([300, 300]);
+        translate([3, 3]) {
             rotate_plate() topframe();
-            translate([0, base_height + 2])
-                pos_plate() topframe();
-            translate([0, base_height + total_height + 4])
-                rotate_plate() middleframe_upper();
-            translate([12, base_height + total_height + 4 - 45])
-                pos_plate() middleframe_upper(true);
-            translate([132, 195]) rotate([0, 0, -90]) {
-                translate([-3, -33]) rotate_plate() middleframe_lower();
-                translate([59, 14]) pos_plate() middleframe_lower(true);
+            translate([0, base_height + 3])
+                pos_plate() bottomplate();
+            translate([0, base_height + total_height + 6])
+                rotate_plate() middleframe();
+            translate([base_width + 3, 0]) {
+                rotate_plate() topframe();
+                translate([0, base_height + 3])
+                    pos_plate() bottomplate(true);
+                translate([0, base_height + total_height + 6])
+                    rotate_plate() middleframe(true);
             }
         }
     }
