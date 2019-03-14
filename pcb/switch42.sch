@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:switch42-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -52,7 +53,7 @@ U 1 1 5C22C971
 P 5150 1500
 F 0 "SW2" H 5150 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 5150 1664 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5150 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5150 1500 50  0001 C CNN
 F 3 "" H 5150 1500 50  0000 C CNN
 	1    5150 1500
 	1    0    0    -1  
@@ -63,7 +64,7 @@ U 1 1 5C22CA22
 P 5950 1500
 F 0 "SW5" H 5950 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 5950 1664 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5950 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5950 1500 50  0001 C CNN
 F 3 "" H 5950 1500 50  0000 C CNN
 	1    5950 1500
 	1    0    0    -1  
@@ -74,7 +75,7 @@ U 1 1 5C22CA58
 P 6750 1500
 F 0 "SW8" H 6750 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 6750 1664 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 6750 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 6750 1500 50  0001 C CNN
 F 3 "" H 6750 1500 50  0000 C CNN
 	1    6750 1500
 	1    0    0    -1  
@@ -85,7 +86,7 @@ U 1 1 5C22CA92
 P 7550 1500
 F 0 "SW11" H 7550 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 7550 1664 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 7550 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 7550 1500 50  0001 C CNN
 F 3 "" H 7550 1500 50  0000 C CNN
 	1    7550 1500
 	1    0    0    -1  
@@ -96,7 +97,7 @@ U 1 1 5C22CAFE
 P 8350 1500
 F 0 "SW14" H 8350 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 8350 1664 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 8350 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 8350 1500 50  0001 C CNN
 F 3 "" H 8350 1500 50  0000 C CNN
 	1    8350 1500
 	1    0    0    -1  
@@ -107,7 +108,7 @@ U 1 1 5C22CB3A
 P 9150 1500
 F 0 "SW17" H 9150 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 1664 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 9150 1500 50  0001 C CNN
 F 3 "" H 9150 1500 50  0000 C CNN
 	1    9150 1500
 	1    0    0    -1  
@@ -120,7 +121,7 @@ U 1 1 5C22D475
 P 5450 1650
 F 0 "D1" V 5496 1571 50  0000 R CNN
 F 1 "D" V 5405 1571 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 5450 1650 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 5450 1650 50  0001 C CNN
 F 3 "~" H 5450 1650 50  0001 C CNN
 	1    5450 1650
 	0    -1   -1   0   
@@ -131,7 +132,7 @@ U 1 1 5C22D8D9
 P 6250 1650
 F 0 "D4" V 6296 1571 50  0000 R CNN
 F 1 "D" V 6205 1571 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 6250 1650 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 6250 1650 50  0001 C CNN
 F 3 "~" H 6250 1650 50  0001 C CNN
 	1    6250 1650
 	0    -1   -1   0   
@@ -142,7 +143,7 @@ U 1 1 5C22D927
 P 7050 1650
 F 0 "D7" V 7096 1571 50  0000 R CNN
 F 1 "D" V 7005 1571 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 7050 1650 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 7050 1650 50  0001 C CNN
 F 3 "~" H 7050 1650 50  0001 C CNN
 	1    7050 1650
 	0    -1   -1   0   
@@ -153,7 +154,7 @@ U 1 1 5C22D975
 P 7850 1650
 F 0 "D10" V 7896 1571 50  0000 R CNN
 F 1 "D" V 7805 1571 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 7850 1650 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 7850 1650 50  0001 C CNN
 F 3 "~" H 7850 1650 50  0001 C CNN
 	1    7850 1650
 	0    -1   -1   0   
@@ -164,7 +165,7 @@ U 1 1 5C22D9BD
 P 8650 1650
 F 0 "D13" V 8696 1571 50  0000 R CNN
 F 1 "D" V 8605 1571 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 8650 1650 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 8650 1650 50  0001 C CNN
 F 3 "~" H 8650 1650 50  0001 C CNN
 	1    8650 1650
 	0    -1   -1   0   
@@ -175,7 +176,7 @@ U 1 1 5C22DA07
 P 9450 1650
 F 0 "D16" V 9496 1571 50  0000 R CNN
 F 1 "D" V 9405 1571 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 9450 1650 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 9450 1650 50  0001 C CNN
 F 3 "~" H 9450 1650 50  0001 C CNN
 	1    9450 1650
 	0    -1   -1   0   
@@ -186,7 +187,7 @@ U 1 1 5C22DF47
 P 5150 2150
 F 0 "SW3" H 5150 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 5150 2314 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5150 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5150 2150 50  0001 C CNN
 F 3 "" H 5150 2150 50  0000 C CNN
 	1    5150 2150
 	1    0    0    -1  
@@ -197,7 +198,7 @@ U 1 1 5C22DF4E
 P 5950 2150
 F 0 "SW6" H 5950 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 5950 2314 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5950 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5950 2150 50  0001 C CNN
 F 3 "" H 5950 2150 50  0000 C CNN
 	1    5950 2150
 	1    0    0    -1  
@@ -208,7 +209,7 @@ U 1 1 5C22DF55
 P 6750 2150
 F 0 "SW9" H 6750 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 6750 2314 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 6750 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 6750 2150 50  0001 C CNN
 F 3 "" H 6750 2150 50  0000 C CNN
 	1    6750 2150
 	1    0    0    -1  
@@ -219,7 +220,7 @@ U 1 1 5C22DF5C
 P 7550 2150
 F 0 "SW12" H 7550 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 7550 2314 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 7550 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 7550 2150 50  0001 C CNN
 F 3 "" H 7550 2150 50  0000 C CNN
 	1    7550 2150
 	1    0    0    -1  
@@ -230,7 +231,7 @@ U 1 1 5C22DF63
 P 8350 2150
 F 0 "SW15" H 8350 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 8350 2314 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 8350 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 8350 2150 50  0001 C CNN
 F 3 "" H 8350 2150 50  0000 C CNN
 	1    8350 2150
 	1    0    0    -1  
@@ -241,7 +242,7 @@ U 1 1 5C22DF6A
 P 9150 2150
 F 0 "SW18" H 9150 2405 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 2314 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 2150 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 9150 2150 50  0001 C CNN
 F 3 "" H 9150 2150 50  0000 C CNN
 	1    9150 2150
 	1    0    0    -1  
@@ -254,7 +255,7 @@ U 1 1 5C22DF72
 P 5450 2300
 F 0 "D2" V 5496 2221 50  0000 R CNN
 F 1 "D" V 5405 2221 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 5450 2300 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 5450 2300 50  0001 C CNN
 F 3 "~" H 5450 2300 50  0001 C CNN
 	1    5450 2300
 	0    -1   -1   0   
@@ -265,7 +266,7 @@ U 1 1 5C22DF79
 P 6250 2300
 F 0 "D5" V 6296 2221 50  0000 R CNN
 F 1 "D" V 6205 2221 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 6250 2300 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 6250 2300 50  0001 C CNN
 F 3 "~" H 6250 2300 50  0001 C CNN
 	1    6250 2300
 	0    -1   -1   0   
@@ -276,7 +277,7 @@ U 1 1 5C22DF80
 P 7050 2300
 F 0 "D8" V 7096 2221 50  0000 R CNN
 F 1 "D" V 7005 2221 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 7050 2300 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 7050 2300 50  0001 C CNN
 F 3 "~" H 7050 2300 50  0001 C CNN
 	1    7050 2300
 	0    -1   -1   0   
@@ -287,7 +288,7 @@ U 1 1 5C22DF87
 P 7850 2300
 F 0 "D11" V 7896 2221 50  0000 R CNN
 F 1 "D" V 7805 2221 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 7850 2300 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 7850 2300 50  0001 C CNN
 F 3 "~" H 7850 2300 50  0001 C CNN
 	1    7850 2300
 	0    -1   -1   0   
@@ -298,7 +299,7 @@ U 1 1 5C22DF8E
 P 8650 2300
 F 0 "D14" V 8696 2221 50  0000 R CNN
 F 1 "D" V 8605 2221 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 8650 2300 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 8650 2300 50  0001 C CNN
 F 3 "~" H 8650 2300 50  0001 C CNN
 	1    8650 2300
 	0    -1   -1   0   
@@ -309,7 +310,7 @@ U 1 1 5C22DF95
 P 9450 2300
 F 0 "D17" V 9496 2221 50  0000 R CNN
 F 1 "D" V 9405 2221 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 9450 2300 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 9450 2300 50  0001 C CNN
 F 3 "~" H 9450 2300 50  0001 C CNN
 	1    9450 2300
 	0    -1   -1   0   
@@ -320,7 +321,7 @@ U 1 1 5C22E1E3
 P 5150 2800
 F 0 "SW4" H 5150 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 5150 2964 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5150 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5150 2800 50  0001 C CNN
 F 3 "" H 5150 2800 50  0000 C CNN
 	1    5150 2800
 	1    0    0    -1  
@@ -331,7 +332,7 @@ U 1 1 5C22E1EA
 P 5950 2800
 F 0 "SW7" H 5950 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 5950 2964 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 5950 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5950 2800 50  0001 C CNN
 F 3 "" H 5950 2800 50  0000 C CNN
 	1    5950 2800
 	1    0    0    -1  
@@ -342,7 +343,7 @@ U 1 1 5C22E1F1
 P 6750 2800
 F 0 "SW10" H 6750 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 6750 2964 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 6750 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 6750 2800 50  0001 C CNN
 F 3 "" H 6750 2800 50  0000 C CNN
 	1    6750 2800
 	1    0    0    -1  
@@ -353,7 +354,7 @@ U 1 1 5C22E1F8
 P 7550 2800
 F 0 "SW13" H 7550 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 7550 2964 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 7550 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 7550 2800 50  0001 C CNN
 F 3 "" H 7550 2800 50  0000 C CNN
 	1    7550 2800
 	1    0    0    -1  
@@ -364,7 +365,7 @@ U 1 1 5C22E1FF
 P 8350 2800
 F 0 "SW16" H 8350 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 8350 2964 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 8350 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 8350 2800 50  0001 C CNN
 F 3 "" H 8350 2800 50  0000 C CNN
 	1    8350 2800
 	1    0    0    -1  
@@ -375,7 +376,7 @@ U 1 1 5C22E206
 P 9150 2800
 F 0 "SW19" H 9150 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 2964 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 9150 2800 50  0001 C CNN
 F 3 "" H 9150 2800 50  0000 C CNN
 	1    9150 2800
 	1    0    0    -1  
@@ -388,7 +389,7 @@ U 1 1 5C22E20E
 P 5450 2950
 F 0 "D3" V 5496 2871 50  0000 R CNN
 F 1 "D" V 5405 2871 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 5450 2950 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 5450 2950 50  0001 C CNN
 F 3 "~" H 5450 2950 50  0001 C CNN
 	1    5450 2950
 	0    -1   -1   0   
@@ -399,7 +400,7 @@ U 1 1 5C22E215
 P 6250 2950
 F 0 "D6" V 6296 2871 50  0000 R CNN
 F 1 "D" V 6205 2871 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 6250 2950 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 6250 2950 50  0001 C CNN
 F 3 "~" H 6250 2950 50  0001 C CNN
 	1    6250 2950
 	0    -1   -1   0   
@@ -410,7 +411,7 @@ U 1 1 5C22E21C
 P 7050 2950
 F 0 "D9" V 7096 2871 50  0000 R CNN
 F 1 "D" V 7005 2871 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 7050 2950 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 7050 2950 50  0001 C CNN
 F 3 "~" H 7050 2950 50  0001 C CNN
 	1    7050 2950
 	0    -1   -1   0   
@@ -421,7 +422,7 @@ U 1 1 5C22E223
 P 7850 2950
 F 0 "D12" V 7896 2871 50  0000 R CNN
 F 1 "D" V 7805 2871 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 7850 2950 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 7850 2950 50  0001 C CNN
 F 3 "~" H 7850 2950 50  0001 C CNN
 	1    7850 2950
 	0    -1   -1   0   
@@ -432,7 +433,7 @@ U 1 1 5C22E22A
 P 8650 2950
 F 0 "D15" V 8696 2871 50  0000 R CNN
 F 1 "D" V 8605 2871 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 8650 2950 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 8650 2950 50  0001 C CNN
 F 3 "~" H 8650 2950 50  0001 C CNN
 	1    8650 2950
 	0    -1   -1   0   
@@ -443,7 +444,7 @@ U 1 1 5C22E231
 P 9450 2950
 F 0 "D18" V 9496 2871 50  0000 R CNN
 F 1 "D" V 9405 2871 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 9450 2950 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 9450 2950 50  0001 C CNN
 F 3 "~" H 9450 2950 50  0001 C CNN
 	1    9450 2950
 	0    -1   -1   0   
@@ -731,7 +732,7 @@ U 1 1 5C4E7E26
 P 9950 1500
 F 0 "SW21" H 9950 1755 50  0000 C CNN
 F 1 "SW_PUSH" H 9950 1664 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9950 1500 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 9950 1500 50  0001 C CNN
 F 3 "" H 9950 1500 50  0000 C CNN
 	1    9950 1500
 	1    0    0    -1  
@@ -742,7 +743,7 @@ U 1 1 5C4E7E2D
 P 10250 1650
 F 0 "D20" V 10296 1571 50  0000 R CNN
 F 1 "D" V 10205 1571 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 10250 1650 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 10250 1650 50  0001 C CNN
 F 3 "~" H 10250 1650 50  0001 C CNN
 	1    10250 1650
 	0    -1   -1   0   
@@ -753,7 +754,7 @@ U 1 1 5C4F07F9
 P 9950 2800
 F 0 "SW22" H 9950 3055 50  0000 C CNN
 F 1 "SW_PUSH" H 9950 2964 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9950 2800 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 9950 2800 50  0001 C CNN
 F 3 "" H 9950 2800 50  0000 C CNN
 	1    9950 2800
 	1    0    0    -1  
@@ -764,7 +765,7 @@ U 1 1 5C4F0800
 P 10250 2950
 F 0 "D21" V 10296 2871 50  0000 R CNN
 F 1 "D" V 10205 2871 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 10250 2950 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 10250 2950 50  0001 C CNN
 F 3 "~" H 10250 2950 50  0001 C CNN
 	1    10250 2950
 	0    -1   -1   0   
@@ -791,7 +792,7 @@ U 1 1 5C5DD285
 P 9950 3450
 F 0 "SW23" H 9950 3705 50  0000 C CNN
 F 1 "SW_PUSH" H 9950 3614 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9950 3450 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.25u-narrow-irreversible-right" H 9950 3450 50  0001 C CNN
 F 3 "" H 9950 3450 50  0000 C CNN
 	1    9950 3450
 	1    0    0    -1  
@@ -802,7 +803,7 @@ U 1 1 5C5DD28C
 P 10250 3600
 F 0 "D22" V 10296 3521 50  0000 R CNN
 F 1 "D" V 10205 3521 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 10250 3600 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 10250 3600 50  0001 C CNN
 F 3 "~" H 10250 3600 50  0001 C CNN
 	1    10250 3600
 	0    -1   -1   0   
@@ -813,7 +814,7 @@ U 1 1 5C5DE165
 P 9150 3450
 F 0 "SW20" H 9150 3705 50  0000 C CNN
 F 1 "SW_PUSH" H 9150 3614 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.00u-narrow-reversible" H 9150 3450 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 9150 3450 50  0001 C CNN
 F 3 "" H 9150 3450 50  0000 C CNN
 	1    9150 3450
 	1    0    0    -1  
@@ -824,7 +825,7 @@ U 1 1 5C5DE16C
 P 9450 3600
 F 0 "D19" V 9496 3521 50  0000 R CNN
 F 1 "D" V 9405 3521 50  0000 R CNN
-F 2 "phi-kbd-library:D_SMD-reversible" H 9450 3600 50  0001 C CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 9450 3600 50  0001 C CNN
 F 3 "~" H 9450 3600 50  0001 C CNN
 	1    9450 3600
 	0    -1   -1   0   
@@ -837,10 +838,8 @@ Wire Wire Line
 Connection ~ 9650 2800
 Wire Wire Line
 	10250 3750 9450 3750
-Text GLabel 9000 3750 0    50   Input ~ 0
+Text GLabel 8750 3750 0    50   Input ~ 0
 row3
-Wire Wire Line
-	9450 3750 9000 3750
 Connection ~ 9450 3750
 $Comp
 L kbd:ProMicro U2
@@ -996,4 +995,63 @@ F 3 "" H 4125 5050 50  0001 C CNN
 	1    4125 5050
 	0    1    1    0   
 $EndComp
+$Comp
+L kbd:SW_PUSH SW26
+U 1 1 5C8A9403
+P 5950 3450
+F 0 "SW26" H 5950 3705 50  0000 C CNN
+F 1 "SW_PUSH" H 5950 3614 50  0000 C CNN
+F 2 "phi-kbd-library:Choc_1.25u-narrow-irreversible-right" H 5950 3450 50  0001 C CNN
+F 3 "" H 5950 3450 50  0000 C CNN
+	1    5950 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D24
+U 1 1 5C8A940A
+P 6250 3600
+F 0 "D24" V 6296 3521 50  0000 R CNN
+F 1 "D" V 6205 3521 50  0000 R CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 6250 3600 50  0001 C CNN
+F 3 "~" H 6250 3600 50  0001 C CNN
+	1    6250 3600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L kbd:SW_PUSH SW25
+U 1 1 5C8A9411
+P 5150 3450
+F 0 "SW25" H 5150 3705 50  0000 C CNN
+F 1 "SW_PUSH" H 5150 3614 50  0000 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5150 3450 50  0001 C CNN
+F 3 "" H 5150 3450 50  0000 C CNN
+	1    5150 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D23
+U 1 1 5C8A9418
+P 5450 3600
+F 0 "D23" V 5496 3521 50  0000 R CNN
+F 1 "D" V 5405 3521 50  0000 R CNN
+F 2 "phi-kbd-library:D_SMD-irreversible" H 5450 3600 50  0001 C CNN
+F 3 "~" H 5450 3600 50  0001 C CNN
+	1    5450 3600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6250 3750 5450 3750
+Text GLabel 4750 3750 0    50   Input ~ 0
+row3
+Connection ~ 5450 3750
+Wire Wire Line
+	5650 2800 5650 3450
+Connection ~ 5650 2800
+Wire Wire Line
+	4850 3450 4850 2800
+Connection ~ 4850 2800
+Wire Wire Line
+	4750 3750 5450 3750
+Wire Wire Line
+	8750 3750 9450 3750
 $EndSCHEMATC
