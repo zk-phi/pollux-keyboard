@@ -6,16 +6,11 @@ $pcb_grid = 0.25;
 
 $100mil = 2.54;
 
-// ---- positions
-$trrs_bottom_pos = 2.5 * $unit_v + 10 * $pcb_grid;
-$reset_bottom_pos = 2.5 * $unit_v - 15 * $pcb_grid;
-$reset_left_pos = 6.5 * $unit_h + 18 * $pcb_grid;
-
 // ---- screw hole size
 $screw_hole = (2 + 0.1) / 2;
 
 // ---- wall size
-$kadomaru_r = 2;
+$kadomaru_r = 1.5;
 $pcb_slop = 0.5;
 $wall_thickness = 5 + $pcb_slop;
 $screw_position =  ($wall_thickness + $pcb_slop) / 2;
@@ -24,109 +19,157 @@ $screw_position =  ($wall_thickness + $pcb_slop) / 2;
 $switch_hole = 14;
 
 // ---- bottom plate placements
-// TODO: verify with the datasheets
 $slop = 1.5;
-$promicro_height  = 7 * $100mil + $slop;
-$promicro_width = 13 * $100mil + $slop;
-$trrs_height = 6 + $slop;
-$trrs_width = 14 + $slop / 2;
-$reset_height = 3.5 + $slop;
-$reset_width = 6 + $slop;
-$promicro_contact_height = 13; // incl. slop
+$promicro_height  = 7 * $100mil;
+$promicro_width = 13 * $100mil;
+$trrs_height = 6;
+$trrs_width = 14.1;
+$reset_height = 3.5;
+$reset_width = 6;
+$promicro_contact_height = 13; // incl. slop, not in the datasheet
+
+// ---- positions
+$promicro_y = 2.5 * $unit_v;
+$promicro_x_left = $promicro_width / 2 - 9 * $pcb_grid; // pcb
+$promicro_x_right = $promicro_width / 2 - 12 * $pcb_grid; // pcb
+$trrs_y = 2.5 * $unit_v + 10 * $pcb_grid; // pcb
+$trrs_x = $trrs_width / 2 - $wall_thickness + $pcb_slop; // pcb
+$reset_y = 2.5 * $unit_v - 15 * $pcb_grid; // pcb
+$reset_x= 6.75 * $unit_h + 18 * $pcb_grid; // pcb
 
 // ---- case shape
 
-module shape (pad = 0) {
-    polygon([
-        [- pad, 4 * $unit_v + pad], [7 * $unit_h + pad, 4 * $unit_v + pad],
-        [7 * $unit_h + pad, $unit_v - pad],
-        [6.5 * $unit_h + pad - 2 * $pcb_grid, -pad - $pcb_grid * 18],
-        [4.5 * $unit_h - pad + 2 * $pcb_grid, -pad - $pcb_grid * 18],
-        [4 * $unit_h - pad, $unit_v - pad], [- pad, $unit_v - pad]
-    ]);
+// pcb
+module shape (pad = 0, right = false) {
+    polygon(
+      // clockwise from the left bottom
+      concat([
+        [               - pad,                      $unit_v - pad],
+        [               - pad,                  4 * $unit_v + pad],
+        [7.25 * $unit_h + pad,                  4 * $unit_v + pad],
+        [7.25 * $unit_h + pad,                      $unit_v - pad],
+      ], !right ? [
+        [ 6.5 * $unit_h + pad + 15 * $pcb_grid,             - pad - $pcb_grid * 23],
+        [ 4.5 * $unit_h - pad +  3 * $pcb_grid,             - pad - $pcb_grid * 23],
+        [   4 * $unit_h - pad,                      $unit_v - pad]
+      ] : [
+        [3.25 * $unit_h + pad,                      $unit_v - pad],
+        [ 2.5 * $unit_h + pad + 15 * $pcb_grid,             - pad - $pcb_grid * 23],
+        [ 0.5 * $unit_h - pad +  3 * $pcb_grid,             - pad - $pcb_grid * 23]
+      ])
+    );
 }
 
-module shape_pcb (pad = 0) {
-    polygon([
-        [- pad, 4 * $unit_v + pad], [7 * $unit_h + pad, 4 * $unit_v + pad],
+// pcb
+module shape_pcb (pad = 0, right = false) {
+    polygon(
+      // clockwise from the left bottom
+      concat([
+        [               - pad,                      $unit_v - pad],
         // trrs & switch (left)
-        [7 * $unit_h + pad, 2.5 * $unit_v + 44 * $pcb_grid + pad],
-        [7 * $unit_h + 12 * $pcb_grid + pad, 2.5 * $unit_v + 33 * $pcb_grid + pad],
-        [7 * $unit_h + 12 * $pcb_grid + pad, 2.5 * $unit_v - 33 * $pcb_grid - pad],
-        [7 * $unit_h + pad, 2.5 * $unit_v - 44 * $pcb_grid - pad],
+        [               - pad,                  2 * $unit_v - pad - $pcb_grid * 12],
+        [               - pad - 12 * $pcb_grid, 2 * $unit_v - pad - $pcb_grid *  2],
+        [               - pad - 12 * $pcb_grid, 3 * $unit_v + pad + $pcb_grid *  2],
+        [               - pad,                  3 * $unit_v + pad + $pcb_grid * 12],
         // ----
-        [7 * $unit_h + pad, $unit_v - pad],
-        [6.5 * $unit_h + pad - 2 * $pcb_grid, -pad - $pcb_grid * 18],
-        [4.5 * $unit_h - pad + 2 * $pcb_grid, -pad - $pcb_grid * 18],
-        [4 * $unit_h - pad, $unit_v - pad], [- pad, $unit_v - pad],
+        [               - pad,                  4 * $unit_v + pad],
+        [7.25 * $unit_h + pad,                  4 * $unit_v + pad],
         // trrs & switch (right)
-        [- pad, 2.5 * $unit_v + 44 * $pcb_grid + pad],
-        [- 12 * $pcb_grid - pad, 2.5 * $unit_v + 33 * $pcb_grid + pad],
-        [- 12 * $pcb_grid - pad, 2.5 * $unit_v - 33 * $pcb_grid - pad],
-        [- pad, 2.5 * $unit_v - 44 * $pcb_grid - pad],
-    ]);
+        [7.25 * $unit_h + pad,                  3 * $unit_v + pad + $pcb_grid * 12],
+        [7.25 * $unit_h + pad + 12 * $pcb_grid, 3 * $unit_v + pad + $pcb_grid *  2],
+        [7.25 * $unit_h + pad + 12 * $pcb_grid, 2 * $unit_v - pad - $pcb_grid *  2],
+        [7.25 * $unit_h + pad,                  2 * $unit_v - pad - $pcb_grid * 12],
+        // ----
+        [7.25 * $unit_h + pad,                      $unit_v - pad],
+      ], !right ? [
+        [ 6.5 * $unit_h + pad + 15 * $pcb_grid,             - pad - $pcb_grid * 23],
+        [ 4.5 * $unit_h - pad +  3 * $pcb_grid,             - pad - $pcb_grid * 23],
+        [   4 * $unit_h - pad,                      $unit_v - pad]
+      ] : [
+        [3.25 * $unit_h + pad,                      $unit_v - pad],
+        [ 2.5 * $unit_h + pad + 15 * $pcb_grid,             - pad - $pcb_grid * 23],
+        [ 0.5 * $unit_h - pad +  3 * $pcb_grid,             - pad - $pcb_grid * 23]
+      ])
+    );
 }
 
-module switch_pos () {
-    switch_positions = [
-        [3, 0, 0], [3, 1, 0], [3, 2, 0], [3, 3, 0], [3, 4, 0], [3, 5, 0], [3, 6, 0],
+// pcb
+module switch_pos (right = false) {
+    switch_positions = concat([
+        [3, 0.25, 0], [3, 1.25, 0], [3, 2.25, 0], [3, 3.25, 0], [3, 4.25, 0], [3, 5.25, 0], [3, 6.25, 0],
         [2, 0.5, 0], [2, 1.5, 0], [2, 2.5, 0], [2, 3.5, 0], [2, 4.5, 0], [2, 5.5, 0],
-        [1, 0, 0], [1, 1, 0], [1, 2, 0], [1, 3, 0], [1, 4, 0], [1, 5, 0], [1, 6, 0],
-        [0, 4.5, 0], [- 10 * $pcb_grid / $unit_v, 5.5 + 8 * $pcb_grid / $unit_h, -15]
-    ];
+        [1, 0, 0], [1, 1, 0], [1, 2, 0], [1, 3, 0], [1, 4, 0], [1, 5, 0], [1, 6, 0]
+    ], !right ? [
+        [0, 4.5, 0], [- 10 * $pcb_grid / $unit_v, 5.5 + 8 * $pcb_grid / $unit_h, -15, 0.25]
+    ] : [
+        [- 10 * $pcb_grid / $unit_v, 0.5 - 8 * $pcb_grid / $unit_h, 15], [0, 1.5, 0, 0.25]
+    ]);
     for (pos = switch_positions)
         translate([(pos[1] + 0.5) * $unit_h, (pos[0] + 0.5) * $unit_v])
             rotate([0, 0, pos[2]])
-              children();
+                translate([pos[3] / 2 * $unit_h, 0])
+                  children();
 }
 
-module skrew_pos () {
-    translate([- $screw_position, $unit_v - $screw_position]) children();
-    translate([- $screw_position, 4 * $unit_v + $screw_position]) children();
-    translate([7 * $unit_h + $screw_position, 4 * $unit_v + $screw_position]) children();
-    translate([7 * $unit_h + $screw_position, $unit_v - $screw_position]) children();
-    translate([6.5 * $unit_h + $screw_position,  - $pcb_grid * 18 - $screw_position]) children();
-    translate([4.5 * $unit_h - $screw_position + 2 * $pcb_grid, - $pcb_grid * 18 - $screw_position]) children();
-    translate([4 * $unit_h - $screw_position, $unit_v - $screw_position]) children();
-    translate([- $screw_position, 2.5 * $unit_v - 44 * $pcb_grid - $screw_position]) children();
-    translate([- $screw_position, 2.5 * $unit_v + 44 * $pcb_grid + $screw_position]) children();
-    translate([7 * $unit_h + $screw_position, 2.5 * $unit_v - 44 * $pcb_grid - $screw_position]) children();
-    translate([7 * $unit_h + $screw_position, 2.5 * $unit_v + 44 * $pcb_grid + $screw_position]) children();
+// pcb
+module skrew_pos (right = false) {
+    // clockwise from the left bottom
+    translate([               - $screw_position,                       $unit_v - $screw_position]) children();
+    translate([               - $screw_position,                 2.5 * $unit_v - $screw_position - 47 * $pcb_grid]) children();
+    translate([               - $screw_position,                 2.5 * $unit_v + $screw_position + 47 * $pcb_grid]) children();
+    translate([               - $screw_position,                   4 * $unit_v + $screw_position]) children();
+    translate([7.25 * $unit_h + $screw_position,                   4 * $unit_v + $screw_position]) children();
+    translate([7.25 * $unit_h + $screw_position,                 2.5 * $unit_v + $screw_position + 47 * $pcb_grid]) children();
+    translate([7.25 * $unit_h + $screw_position,                 2.5 * $unit_v - $screw_position - 47 * $pcb_grid]) children();
+    translate([7.25 * $unit_h + $screw_position,                       $unit_v - $screw_position]) children();
+    if (!right) {
+      translate([ 6.5 * $unit_h + $screw_position + 15 * $pcb_grid,              - $screw_position - 23 * $pcb_grid]) children();
+      translate([ 4.5 * $unit_h - $screw_position +  3 * $pcb_grid,              - $screw_position - 23 * $pcb_grid]) children();
+      translate([   4 * $unit_h - $screw_position,                       $unit_v - $screw_position]) children();
+    } else {
+      translate([3.25 * $unit_h + $screw_position,                       $unit_v - $screw_position]) children();
+      translate([ 2.5 * $unit_h + $screw_position + 15 * $pcb_grid,              - $screw_position - 23 * $pcb_grid]) children();
+      translate([ 0.5 * $unit_h - $screw_position +  3 * $pcb_grid,              - $screw_position - 23 * $pcb_grid]) children();
+    }
 }
 
+// pcb
 module promicro (right) {
-    pos_diff = $promicro_width / 2 - 12 * $pcb_grid;
-    x_pos = right ? 7 * $unit_h - pos_diff : pos_diff;
-    translate([x_pos, 2.5 * $unit_v])
-        square([$promicro_width, $promicro_height], center = true);
+    x_pos = right ? 7.25 * $unit_h - $promicro_x_right : $promicro_x_left;
+    translate([x_pos, $promicro_y])
+        square([$promicro_width + $slop, $promicro_height + $slop], center = true);
 }
 
+// pcb
 module promicro_contact (right) {
-    x_pos = right ? 7 * $unit_h + $wall_thickness / 2 : - $wall_thickness / 2;
-    translate([x_pos, 2.5 * $unit_v])
+    x_pos = right ? 7.25 * $unit_h + $wall_thickness / 2 : - $wall_thickness / 2;
+    translate([x_pos, $promicro_y])
         square([$wall_thickness, $promicro_contact_height], center = true);
 }
 
+// pcb
 module trrs_contact (right) {
-    x_pos = right ? - $wall_thickness / 2 : 7 * $unit_h + $wall_thickness / 2;
-    translate([x_pos, $trrs_bottom_pos])
-        square([$wall_thickness, $trrs_height], center = true);
+    x_pos = right ? - $wall_thickness / 2 : 7.25 * $unit_h + $wall_thickness / 2;
+    translate([x_pos, $trrs_y])
+        square([$wall_thickness, $trrs_height + $slop], center = true);
 }
 
+// pcb
 module trrs (right) {
-    pos_diff = $trrs_width / 2 - $wall_thickness;
-    x_pos = right ? pos_diff : 7 * $unit_h - pos_diff;
-    translate([x_pos, $trrs_bottom_pos])
-        square([$trrs_width, $trrs_height], center = true);
+    x_pos = right ? $trrs_x : 7.25 * $unit_h - $trrs_x;
+    translate([x_pos, $trrs_y])
+        square([$trrs_width + $slop, $trrs_height + $slop], center = true);
 }
 
+// pcb
 module reset_sw (right) {
-    translate([right ? 7 * $unit_h - $reset_left_pos : $reset_left_pos, $reset_bottom_pos])
-        square([$reset_width, $reset_height], center = true);
+    translate([right ? 7.25 * $unit_h - $reset_x : $reset_x, $reset_y])
+        square([$reset_width + $slop, $reset_height + $slop], center = true);
 }
 
+// pcb
 module reset_tsumayouji (right) {
-    translate([right ? 7 * $unit_h - $reset_left_pos : $reset_left_pos, $reset_bottom_pos])
+    translate([right ? 7.25 * $unit_h - $reset_x : $reset_x, $reset_y])
         circle(d = 2);
 }
 
@@ -136,12 +179,12 @@ module kadomaru (r) {
     offset (r = r) offset (r = -r)  children();
 }
 
-module skrew_holes () {
-    skrew_pos() circle(r = $screw_hole);
+module skrew_holes (right = false) {
+    skrew_pos(right) circle(r = $screw_hole);
 }
 
-module switch_holes () {
-    switch_pos() square([$switch_hole, $switch_hole], center = true);
+module switch_holes (right) {
+    switch_pos(right) square([$switch_hole, $switch_hole], center = true);
 }
 
 module single_keycap () {
@@ -154,7 +197,7 @@ module single_keycap () {
 module bottomplate (right = false) {
     difference () {
         kadomaru($kadomaru_r) difference () {
-            shape($wall_thickness);
+            shape($wall_thickness, right);
             trrs_contact(right);
             promicro_contact(right);
         }
@@ -163,35 +206,35 @@ module bottomplate (right = false) {
             trrs(right);
             reset_sw(right);
         }
-        skrew_holes();
+        skrew_holes(right);
     }
 }
 
 module bottomplate2 (right = false) {
     difference () {
-        kadomaru($kadomaru_r) shape($wall_thickness);
-        skrew_holes();
+        kadomaru($kadomaru_r) shape($wall_thickness, right);
+        skrew_holes(right);
         reset_tsumayouji(right);
     }
 }
 
-module topplate () {
+module topplate (right = false) {
     difference () {
-        kadomaru($kadomaru_r) shape($wall_thickness);
-        switch_holes();
-        skrew_holes();
+        kadomaru($kadomaru_r) shape($wall_thickness, right);
+        switch_holes(right);
+        skrew_holes(right);
     }
 }
 
 module middleframe (right = false) {
     difference () {
         kadomaru($kadomaru_r) difference () {
-            shape($wall_thickness);
+            shape($wall_thickness, right);
             trrs_contact(right);
             promicro_contact(right);
         }
-        shape_pcb($pcb_slop);
-        skrew_holes();
+        shape_pcb($pcb_slop, right);
+        skrew_holes(right);
     }
 }
 
@@ -211,16 +254,16 @@ module middleframe_upper (right) {
     }
 }
 
-module topframe () {
+module topframe (right = false) {
     difference () {
-        kadomaru($kadomaru_r) shape($wall_thickness);
-        shape($pcb_slop);
-        skrew_holes();
+        kadomaru($kadomaru_r) shape($wall_thickness, right);
+        shape($pcb_slop, right);
+        skrew_holes(right);
     }
 }
 
-module preview_keycap () {
-    switch_pos() single_keycap();
+module preview_keycap (right) {
+    switch_pos(right) single_keycap();
 }
 
 module preview_pcb_kicad () {
@@ -228,8 +271,8 @@ module preview_pcb_kicad () {
         import("../pcb/switch42.stl");
 }
 
-module preview_pcb () {
-    shape();
+module preview_pcb (right = false) {
+    shape_pcb(0, right);
 }
 
 // ---- preview model
@@ -237,11 +280,11 @@ module preview_pcb () {
 $acryl_color = [1, 1, 1, 0.7];
 
 module preview (diff = 0, right = false) {
-    translate([0, 0, 12.9 + diff * 2]) color([0.6, 0.6, 0.8]) preview_keycap();
-    translate([0, 0, 10 + diff * 3]) color($acryl_color) linear_extrude(4) topframe();
-    translate([0, 0, 8 + diff * 2]) color($acryl_color) linear_extrude(2) topplate();
+    translate([0, 0, 12.9 + diff * 2]) color([0.6, 0.6, 0.8]) preview_keycap(right);
+    translate([0, 0, 10 + diff * 3]) color($acryl_color) linear_extrude(4) topframe(right);
+    translate([0, 0, 8 + diff * 2]) color($acryl_color) linear_extrude(2) topplate(right);
     // 8 - 0.2 - 1.6 = 6.2
-//    translate([0, 0, 6.2 + diff * 2]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb();
+//    translate([0, 0, 6.2 + diff * 2]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb(right);
     translate([0, 0, 6.2 + diff * 2]) color([1, 1, 1]) preview_pcb_kicad();
     translate([0, 0, 4 + diff]) color($acryl_color) linear_extrude(4) middleframe(right);
     translate([0, 0, 0]) color($acryl_color) linear_extrude(4) bottomplate(right);
@@ -308,5 +351,5 @@ module acryl_4mm (guide = false) {
 }
 
 //acryl_2mm();
-preview();
-translate([280, 0, 0]) mirror([1, 0, 0]) preview();
+preview(0);
+translate([150, 0, 0]) preview(0, right = true);
