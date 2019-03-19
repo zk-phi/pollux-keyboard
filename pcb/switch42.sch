@@ -1060,7 +1060,7 @@ U 1 1 5C8BDF72
 P 5550 4400
 F 0 "L1" H 5550 4662 51  0000 C CNN
 F 1 "SK6812MINI" H 5550 4597 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 5550 4400 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 5550 4400 60  0001 C CNN
 F 3 "" H 5550 4400 60  0001 C CNN
 	1    5550 4400
 	-1   0    0    1   
@@ -1071,7 +1071,7 @@ U 1 1 5C8DAB40
 P 6150 4400
 F 0 "L5" H 6150 4662 51  0000 C CNN
 F 1 "SK6812MINI" H 6150 4597 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 6150 4400 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 6150 4400 60  0001 C CNN
 F 3 "" H 6150 4400 60  0001 C CNN
 	1    6150 4400
 	-1   0    0    1   
@@ -1088,7 +1088,7 @@ U 1 1 5C8DE0E6
 P 6750 4400
 F 0 "L9" H 6750 4662 51  0000 C CNN
 F 1 "SK6812MINI" H 6750 4597 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 6750 4400 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 6750 4400 60  0001 C CNN
 F 3 "" H 6750 4400 60  0001 C CNN
 	1    6750 4400
 	-1   0    0    1   
@@ -1105,7 +1105,7 @@ U 1 1 5C8DF8F3
 P 7350 4400
 F 0 "L12" H 7350 4662 51  0000 C CNN
 F 1 "SK6812MINI" H 7350 4597 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 7350 4400 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 7350 4400 60  0001 C CNN
 F 3 "" H 7350 4400 60  0001 C CNN
 	1    7350 4400
 	-1   0    0    1   
@@ -1122,7 +1122,7 @@ U 1 1 5C8E1320
 P 7950 4400
 F 0 "L15" H 7950 4662 51  0000 C CNN
 F 1 "SK6812MINI" H 7950 4597 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 7950 4400 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 7950 4400 60  0001 C CNN
 F 3 "" H 7950 4400 60  0001 C CNN
 	1    7950 4400
 	-1   0    0    1   
@@ -1139,7 +1139,7 @@ U 1 1 5C8E2D38
 P 8550 4400
 F 0 "L18" H 8550 4662 51  0000 C CNN
 F 1 "SK6812MINI" H 8550 4597 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 8550 4400 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 8550 4400 60  0001 C CNN
 F 3 "" H 8550 4400 60  0001 C CNN
 	1    8550 4400
 	-1   0    0    1   
@@ -1156,7 +1156,7 @@ U 1 1 5C8E4A06
 P 9150 4400
 F 0 "L22" H 9150 4662 51  0000 C CNN
 F 1 "SK6812MINI" H 9150 4597 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 9150 4400 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 9150 4400 60  0001 C CNN
 F 3 "" H 9150 4400 60  0001 C CNN
 	1    9150 4400
 	-1   0    0    1   
@@ -1173,7 +1173,7 @@ U 1 1 5C8E755A
 P 5550 4875
 F 0 "L2" H 5550 5137 51  0000 C CNN
 F 1 "SK6812MINI" H 5550 5072 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 5550 4875 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 5550 4875 60  0001 C CNN
 F 3 "" H 5550 4875 60  0001 C CNN
 	1    5550 4875
 	-1   0    0    1   
@@ -1184,7 +1184,7 @@ U 1 1 5C8E7561
 P 6150 4875
 F 0 "L6" H 6150 5137 51  0000 C CNN
 F 1 "SK6812MINI" H 6150 5072 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 6150 4875 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 6150 4875 60  0001 C CNN
 F 3 "" H 6150 4875 60  0001 C CNN
 	1    6150 4875
 	-1   0    0    1   
@@ -1201,7 +1201,7 @@ U 1 1 5C8E756B
 P 6750 4875
 F 0 "L10" H 6750 5137 51  0000 C CNN
 F 1 "SK6812MINI" H 6750 5072 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 6750 4875 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 6750 4875 60  0001 C CNN
 F 3 "" H 6750 4875 60  0001 C CNN
 	1    6750 4875
 	-1   0    0    1   
@@ -1218,7 +1218,7 @@ U 1 1 5C8E7575
 P 7350 4875
 F 0 "L13" H 7350 5137 51  0000 C CNN
 F 1 "SK6812MINI" H 7350 5072 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 7350 4875 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 7350 4875 60  0001 C CNN
 F 3 "" H 7350 4875 60  0001 C CNN
 	1    7350 4875
 	-1   0    0    1   
@@ -1235,7 +1235,7 @@ U 1 1 5C8E757F
 P 7950 4875
 F 0 "L16" H 7950 5137 51  0000 C CNN
 F 1 "SK6812MINI" H 7950 5072 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 7950 4875 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 7950 4875 60  0001 C CNN
 F 3 "" H 7950 4875 60  0001 C CNN
 	1    7950 4875
 	-1   0    0    1   
@@ -1252,7 +1252,7 @@ U 1 1 5C8E7589
 P 8550 4875
 F 0 "L19" H 8550 5137 51  0000 C CNN
 F 1 "SK6812MINI" H 8550 5072 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 8550 4875 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 8550 4875 60  0001 C CNN
 F 3 "" H 8550 4875 60  0001 C CNN
 	1    8550 4875
 	-1   0    0    1   
@@ -1269,7 +1269,7 @@ U 1 1 5C8F00FA
 P 5550 5375
 F 0 "L3" H 5550 5637 51  0000 C CNN
 F 1 "SK6812MINI" H 5550 5572 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 5550 5375 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 5550 5375 60  0001 C CNN
 F 3 "" H 5550 5375 60  0001 C CNN
 	1    5550 5375
 	-1   0    0    1   
@@ -1280,7 +1280,7 @@ U 1 1 5C8F0101
 P 6150 5375
 F 0 "L7" H 6150 5637 51  0000 C CNN
 F 1 "SK6812MINI" H 6150 5572 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 6150 5375 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 6150 5375 60  0001 C CNN
 F 3 "" H 6150 5375 60  0001 C CNN
 	1    6150 5375
 	-1   0    0    1   
@@ -1297,7 +1297,7 @@ U 1 1 5C8F010B
 P 6750 5375
 F 0 "L11" H 6750 5637 51  0000 C CNN
 F 1 "SK6812MINI" H 6750 5572 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 6750 5375 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 6750 5375 60  0001 C CNN
 F 3 "" H 6750 5375 60  0001 C CNN
 	1    6750 5375
 	-1   0    0    1   
@@ -1314,7 +1314,7 @@ U 1 1 5C8F0115
 P 7350 5375
 F 0 "L14" H 7350 5637 51  0000 C CNN
 F 1 "SK6812MINI" H 7350 5572 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 7350 5375 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 7350 5375 60  0001 C CNN
 F 3 "" H 7350 5375 60  0001 C CNN
 	1    7350 5375
 	-1   0    0    1   
@@ -1331,7 +1331,7 @@ U 1 1 5C8F011F
 P 7950 5375
 F 0 "L17" H 7950 5637 51  0000 C CNN
 F 1 "SK6812MINI" H 7950 5572 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 7950 5375 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 7950 5375 60  0001 C CNN
 F 3 "" H 7950 5375 60  0001 C CNN
 	1    7950 5375
 	-1   0    0    1   
@@ -1348,7 +1348,7 @@ U 1 1 5C8F0129
 P 8550 5375
 F 0 "L20" H 8550 5637 51  0000 C CNN
 F 1 "SK6812MINI" H 8550 5572 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 8550 5375 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 8550 5375 60  0001 C CNN
 F 3 "" H 8550 5375 60  0001 C CNN
 	1    8550 5375
 	-1   0    0    1   
@@ -1365,7 +1365,7 @@ U 1 1 5C8F0133
 P 9150 5375
 F 0 "L23" H 9150 5637 51  0000 C CNN
 F 1 "SK6812MINI" H 9150 5572 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 9150 5375 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 9150 5375 60  0001 C CNN
 F 3 "" H 9150 5375 60  0001 C CNN
 	1    9150 5375
 	-1   0    0    1   
@@ -1382,7 +1382,7 @@ U 1 1 5C8F474E
 P 5550 5850
 F 0 "L4" H 5550 6112 51  0000 C CNN
 F 1 "SK6812MINI" H 5550 6047 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 5550 5850 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 5550 5850 60  0001 C CNN
 F 3 "" H 5550 5850 60  0001 C CNN
 	1    5550 5850
 	-1   0    0    1   
@@ -1393,7 +1393,7 @@ U 1 1 5C8F4755
 P 6150 5850
 F 0 "L8" H 6150 6112 51  0000 C CNN
 F 1 "SK6812MINI" H 6150 6047 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 6150 5850 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 6150 5850 60  0001 C CNN
 F 3 "" H 6150 5850 60  0001 C CNN
 	1    6150 5850
 	-1   0    0    1   
@@ -1410,7 +1410,7 @@ U 1 1 5C8F903E
 P 8550 5850
 F 0 "L21" H 8550 6112 51  0000 C CNN
 F 1 "SK6812MINI" H 8550 6047 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 8550 5850 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 8550 5850 60  0001 C CNN
 F 3 "" H 8550 5850 60  0001 C CNN
 	1    8550 5850
 	-1   0    0    1   
@@ -1421,7 +1421,7 @@ U 1 1 5C8F9045
 P 9150 5850
 F 0 "L24" H 9150 6112 51  0000 C CNN
 F 1 "SK6812MINI" H 9150 6047 16  0000 C CNN
-F 2 "phi-kbd-library:_SK6812MINI-irreversible-with-edgecuts" H 9150 5850 60  0001 C CNN
+F 2 "phi-kbd-library:SK6812MINI-irreversible" H 9150 5850 60  0001 C CNN
 F 3 "" H 9150 5850 60  0001 C CNN
 	1    9150 5850
 	-1   0    0    1   
