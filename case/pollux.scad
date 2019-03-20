@@ -295,9 +295,9 @@ module preview (diff = 0, right = false) {
 
 // ---- cut model
 
-extra_bottom_height = $pcb_grid * 18;
+extra_bottom_height = $pcb_grid * 23;
 base_height         = 3 * $unit_v + 2 * $wall_thickness;
-base_width          = 7 * $unit_h + 2 * $wall_thickness;
+base_width          = 7.25 * $unit_h + 2 * $wall_thickness;
 total_height        = base_height + $unit_v + extra_bottom_height;
 
 module pos_plate () {
@@ -316,17 +316,17 @@ module acryl_2mm (guide = false) {
     difference () {
         if (guide) square([300, 300]);
         translate([3, 3]) {
-            rotate_plate() topplate();
+            rotate_plate() topplate(false);
             translate([0, base_height + 3])
-                pos_plate() bottomplate2();
+                pos_plate() bottomplate2(false);
             translate([0, base_height + total_height + 6])
-                rotate_plate() topplate();
+                rotate_plate() topplate(true);
             translate([base_width + 3, 0]) {
-                rotate_plate() topplate();
+                rotate_plate() topplate(true);
                 translate([0, base_height + 3])
                     pos_plate() bottomplate2(true);
                 translate([0, base_height + total_height + 6])
-                    rotate_plate() topplate();
+                    rotate_plate() topplate(false);
             }
         }
     }
@@ -336,17 +336,17 @@ module acryl_4mm (guide = false) {
     difference () {
         if (guide) square([300, 300]);
         translate([3, 3]) {
-            rotate_plate() topframe();
+            rotate_plate() topframe(false);
             translate([0, base_height + 3])
-                pos_plate() bottomplate();
+                pos_plate() bottomplate(false);
             translate([0, base_height + total_height + 6])
-                rotate_plate() middleframe();
+                rotate_plate() middleframe(true);
             translate([base_width + 3, 0]) {
-                rotate_plate() topframe();
+                rotate_plate() topframe(true);
                 translate([0, base_height + 3])
                     pos_plate() bottomplate(true);
                 translate([0, base_height + total_height + 6])
-                    rotate_plate() middleframe(true);
+                    rotate_plate() middleframe(false);
             }
         }
     }
