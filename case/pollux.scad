@@ -101,9 +101,9 @@ module switch_pos (right = false) {
         [2, 0.5, 0], [2, 1.5, 0], [2, 2.5, 0], [2, 3.5, 0], [2, 4.5, 0], [2, 5.5, 0],
         [1, 0, 0], [1, 1, 0], [1, 2, 0], [1, 3, 0], [1, 4, 0], [1, 5, 0], [1, 6, 0]
     ], !right ? [
-        [-$thumb, 4.5, 0], [-$thumb + - 10 * $pcb_grid / $unit_v, 5.5 + 8 * $pcb_grid / $unit_h, -15, 0.25]
+        [-$thumb, 4.5, 0], [-$thumb + - 10 * $pcb_grid / $unit_v, 5.5 + 8 * $pcb_grid / $unit_h, -15]
     ] : [
-        [-$thumb + - 10 * $pcb_grid / $unit_v, 0.5 - 8 * $pcb_grid / $unit_h, 15], [-$thumb, 1.5, 0, 0.25]
+        [-$thumb + - 10 * $pcb_grid / $unit_v, 0.5 - 8 * $pcb_grid / $unit_h, 15], [-$thumb, 1.5, 0]
     ]);
     for (pos = switch_positions)
         translate([(pos[1] + 0.5) * $unit_h, (pos[0] + 0.5) * $unit_v])
