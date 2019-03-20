@@ -792,7 +792,7 @@ U 1 1 5C5DD285
 P 9950 3450
 F 0 "SW23" H 9950 3705 50  0000 C CNN
 F 1 "SW_PUSH" H 9950 3614 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.25u-narrow-irreversible-right" H 9950 3450 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 9950 3450 50  0001 C CNN
 F 3 "" H 9950 3450 50  0000 C CNN
 	1    9950 3450
 	1    0    0    -1  
@@ -1001,7 +1001,7 @@ U 1 1 5C8A9403
 P 5950 3450
 F 0 "SW26" H 5950 3705 50  0000 C CNN
 F 1 "SW_PUSH" H 5950 3614 50  0000 C CNN
-F 2 "phi-kbd-library:Choc_1.25u-narrow-irreversible-right" H 5950 3450 50  0001 C CNN
+F 2 "phi-kbd-library:Choc_1.00u-narrow-irreversible" H 5950 3450 50  0001 C CNN
 F 3 "" H 5950 3450 50  0000 C CNN
 	1    5950 3450
 	1    0    0    -1  
