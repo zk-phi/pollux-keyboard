@@ -287,6 +287,7 @@ module preview (diff = 0, right = false) {
     // 8 - 0.2 - 1.6 = 6.2
 //    translate([0, 0, 6.2 + diff * 2]) color([1, 1, 1]) linear_extrude(1.6) preview_pcb(right);
     translate([0, 0, 6.2 + diff * 2]) color([1, 1, 1]) preview_pcb_kicad();
+    // TODO: maybe 6 (middle) + 2 (bottom) is better to make a room for underglows ?
     translate([0, 0, 4 + diff]) color($acryl_color) linear_extrude(4) middleframe(right);
     translate([0, 0, 0]) color($acryl_color) linear_extrude(4) bottomplate(right);
     translate([0, 0, -2 - diff]) color($acryl_color) linear_extrude(2) bottomplate2(right);
