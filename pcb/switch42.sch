@@ -910,14 +910,14 @@ Text GLabel 3225 5175 2    50   Input ~ 0
 col5
 NoConn ~ 3225 5375
 Text GLabel 3225 4475 2    50   Input ~ 0
-reset2
+reset
 Wire Wire Line
 	1525 4575 1525 4475
 Wire Wire Line
 	1525 4475 1825 4475
 Connection ~ 1525 4575
 Text GLabel 1825 4375 0    50   Input ~ 0
-data2
+data
 NoConn ~ 3225 4275
 NoConn ~ 1825 4675
 NoConn ~ 1825 4775
@@ -936,7 +936,7 @@ F 3 "" H 4325 5625 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 4025 5625 0    50   Input ~ 0
-reset2
+reset
 $Comp
 L power:GND #PWR012
 U 1 1 5C5EDCB3
@@ -972,7 +972,7 @@ F 3 "" H 4125 5100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text GLabel 4125 5150 2    50   Input ~ 0
-data2
+data
 $Comp
 L power:VCC #PWR0101
 U 1 1 5C641BA9
