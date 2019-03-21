@@ -354,6 +354,64 @@ module acryl_4mm (guide = false) {
     }
 }
 
+// 2mm things + some 4mm things (1 middleframe, 1 topframe)
+module acryl_2_2mm_a (guide = false) {
+    difference () {
+        if (guide) square([300, 300]);
+        translate([3, 3]) {
+            rotate_plate() topplate(false);
+            translate([0, base_height + 3])
+                pos_plate() bottomplate2(false);
+            translate([0, base_height + total_height + 6])
+                rotate_plate() topframe(true);
+            translate([0, base_height * 2 + total_height + 9]) pos_plate() {
+                middleframe_lower(true);
+                translate([$wall_thickness, - 0.5 * $unit_v]) middleframe_upper(true);
+            }
+            translate([base_width + 3, 0]) {
+                rotate_plate() topplate(true);
+                translate([0, base_height + 3])
+                    pos_plate() bottomplate2(true);
+                translate([0, base_height + total_height + 6])
+                    rotate_plate() topframe(false);
+                translate([0, base_height * 2 + total_height + 9]) pos_plate() {
+                    middleframe_lower(false);
+                translate([$wall_thickness, - 0.5 * $unit_v]) middleframe_upper(false);
+                }
+            }
+        }
+    }
+}
+
+// remaining 4mm things (1 topframe, 1 middleframe, 2 bottomplates)
+module acryl_2_2mm_b (guide = false) {
+    difference () {
+        if (guide) square([300, 300]);
+        translate([3, 3]) {
+            rotate_plate() topframe(false);
+            translate([0, base_height + 3])
+                pos_plate() bottomplate(false);
+            translate([0, base_height + total_height + 6])
+                rotate_plate() bottomplate(true);
+            translate([0, base_height * 2 + total_height + 9]) pos_plate() {
+                middleframe_lower(true);
+                translate([$wall_thickness, - 0.5 * $unit_v]) middleframe_upper(true);
+            }
+            translate([base_width + 3, 0]) {
+                rotate_plate() topframe(true);
+                translate([0, base_height + 3])
+                    pos_plate() bottomplate(true);
+                translate([0, base_height + total_height + 6])
+                    rotate_plate() bottomplate(false);
+                translate([0, base_height * 2 + total_height + 9]) pos_plate() {
+                    middleframe_lower(false);
+                translate([$wall_thickness, - 0.5 * $unit_v]) middleframe_upper(false);
+                }
+            }
+        }
+    }
+}
+
 //acryl_2mm();
 preview(0);
 translate([150, 0, 0]) preview(0, right = true);
