@@ -783,7 +783,6 @@ Text GLabel 9650 1300 1    50   Input ~ 0
 col6
 Text GLabel 3150 2200 2    50   Input ~ 0
 col6
-NoConn ~ 1750 1200
 Wire Wire Line
 	9650 1500 9650 2800
 $Comp
@@ -923,7 +922,6 @@ NoConn ~ 1825 4675
 NoConn ~ 1825 4775
 Text GLabel 3225 5275 2    50   Input ~ 0
 col6
-NoConn ~ 1825 4275
 $Comp
 L kbd:SW_PUSH SW24
 U 1 1 5C5EDCAB
@@ -2124,4 +2122,10 @@ Wire Wire Line
 	3625 6650 3625 6975
 Wire Wire Line
 	4225 6650 4225 6975
+Text GLabel 5350 4300 0    50   Input ~ 0
+led
+Text GLabel 1825 4275 0    50   Input ~ 0
+led
+Text GLabel 1750 1200 0    50   Input ~ 0
+led
 $EndSCHEMATC
