@@ -243,16 +243,16 @@ module middleframe (right = false) {
 module middleframe_lower (right) {
     intersection () {
         middleframe(right);
-        translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 18])
-            square([7 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 18)]);
+        translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 23])
+            square([7.25 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 23)]);
     }
 }
 
 module middleframe_upper (right) {
     difference () {
         middleframe(right);
-        translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 18])
-            square([7 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 18)]);
+        translate([- $wall_thickness, - $wall_thickness - $pcb_grid * 23])
+            square([7.25 * $unit_h + $wall_thickness * 2,  2.5 * $unit_v + ($wall_thickness + $pcb_grid * 23)]);
     }
 }
 
