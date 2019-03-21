@@ -115,14 +115,15 @@ module switch_pos (right = false) {
 // pcb
 module skrew_pos (right = false) {
     // clockwise from the left bottom
-    translate([               - $screw_position,                              $unit_v - $screw_position]) children();
-    translate([               - $screw_position,                        2.5 * $unit_v - $screw_position - 47 * $pcb_grid]) children();
-    translate([               - $screw_position,                        2.5 * $unit_v + $screw_position + 47 * $pcb_grid]) children();
-    translate([               - $screw_position,                          4 * $unit_v + $screw_position]) children();
-    translate([7.25 * $unit_h + $screw_position,                          4 * $unit_v + $screw_position]) children();
-    translate([7.25 * $unit_h + $screw_position,                        2.5 * $unit_v + $screw_position + 47 * $pcb_grid]) children();
-    translate([7.25 * $unit_h + $screw_position,                        2.5 * $unit_v - $screw_position - 47 * $pcb_grid]) children();
-    translate([7.25 * $unit_h + $screw_position,                              $unit_v - $screw_position]) children();
+    translate([                - $screw_position,                              $unit_v - $screw_position]) children();
+    translate([                - $screw_position,                        2.5 * $unit_v - $screw_position - 47 * $pcb_grid]) children();
+    translate([                - $screw_position,                        2.5 * $unit_v + $screw_position + 47 * $pcb_grid]) children();
+    translate([                - $screw_position,                          4 * $unit_v + $screw_position]) children();
+    translate([3.625 * $unit_h,                                            4 * $unit_v + $screw_position]) children();
+    translate([7.25  * $unit_h + $screw_position,                          4 * $unit_v + $screw_position]) children();
+    translate([7.25  * $unit_h + $screw_position,                        2.5 * $unit_v + $screw_position + 47 * $pcb_grid]) children();
+    translate([7.25  * $unit_h + $screw_position,                        2.5 * $unit_v - $screw_position - 47 * $pcb_grid]) children();
+    translate([7.25  * $unit_h + $screw_position,                              $unit_v - $screw_position]) children();
     if (!right) {
       translate([ 6.5 * $unit_h + $screw_position + 15 * $pcb_grid, -$thumb * $unit_v - $screw_position - 23 * $pcb_grid]) children();
       translate([ 4.5 * $unit_h - $screw_position +  3 * $pcb_grid, -$thumb * $unit_v - $screw_position - 23 * $pcb_grid]) children();
