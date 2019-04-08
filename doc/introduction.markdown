@@ -6,6 +6,8 @@ POLLUX (r2) Keyboard の紹介＆組み立てガイド
 
 ![POLLUX](pollux.jpg)
 
+![POLLUX](pollux2.jpg)
+
 POLLUX は zk-phi が設計した自作キーボードキットです。
 
 「いつもの手癖」をそのまま活かせる、それでいて自作キーボード特有の利点も取り込んだキーボードを目指して設計しました。
