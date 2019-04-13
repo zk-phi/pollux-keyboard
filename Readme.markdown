@@ -123,7 +123,7 @@ POLLUX は Pro Micro を簡単に交換できるようにする「コンスル�
 
 Pro Micro にファームウェアを書き込みます。
 
-私のリポジトリからコードをダウンロード後、QMK Firmware の公式ページを参考に環境を構築します。
+私のリポジトリ (https://github.com/zk-phi/qmk_firmware) からコードをダウンロード後、QMK Firmware の公式ページを参考に環境を構築します。
 
 ![promicro_usb](images/promicro_usb.JPG)
 
