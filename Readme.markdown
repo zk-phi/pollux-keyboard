@@ -4,7 +4,7 @@ POLLUX (r2) Keyboard の紹介＆組み立てガイド
 
 # 概要
 
-![POLLUX](pollux.jpg)
+![POLLUX](images/pollux.jpg)
 
 POLLUX は zk-phi が設計した自作キーボードキットです。
 
@@ -52,7 +52,7 @@ POLLUX は zk-phi が設計した自作キーボードキットです。
   - ボトムプレート (穴あき) 4 枚 [左右別] (ProMicro などが通る穴だけが空いたもの)
   - 底板 (穴なし) 2 枚 [左右別] (ネジ穴以外空いていないもの)
 
-![case](case.png)
+![case](images/case.png)
 
 - 汎用電子部品
   - 表面実装ダイオード [1N4148w] 44 個
@@ -115,7 +115,7 @@ Pro Micro の USB コネクタは「モゲ」やすく、幾多の自作キー�
 
 POLLUX は Pro Micro を簡単に交換できるようにする「コンスルー 」に対応していないので、ホットボンドなどで補強しておくと多少安心です。
 
-![promicro_glue](promicro_glue.JPG)
+![promicro_glue](images/promicro_glue.JPG)
 
 コネクタの上や内部につけてしまわないように注意してください。
 
@@ -125,7 +125,7 @@ Pro Micro にファームウェアを書き込みます。
 
 私のリポジトリからコードをダウンロード後、QMK Firmware の公式ページを参考に環境を構築します。
 
-![promicro_usb](promicro_usb.JPG)
+![promicro_usb](images/promicro_usb.JPG)
 
 環境ができたら、 Pro Micro を USB で接続した上で
 
@@ -155,11 +155,11 @@ make pollux/rev2:default:avrdude
 
 ２枚の基板を同じ向きで（たとえば、表を上に）置いて、 *一方は左の、他方は右の、* 親指クラスタを落とします。同じ側を落として右手・右手や左手・左手のキーボードになってしまわないように注意してください。
 
-![pcb_cut](pcb_cut.JPG)
+![pcb_cut](images/pcb_cut.JPG)
 
 力技で折ろうとすると、写真のように基板を損傷します (写真は別のキーボードの基板ですが、同じ問題が起こります)。
 
-![pcb_broken](pcb_broken.jpg)
+![pcb_broken](images/pcb_broken.jpg)
 
 *ニッパやカッターなどであらかじめ傷をつけて、* なるべく少ない力で折り取ります。切りしろ部分以外に傷をつけないように注意してください。最悪、そこを通っている配線を断線してしまうと、動作に問題が起こる場合があります (特に LED)。バリはある程度残したままでもケースに収められるようになっています。うっかり傷つけるくらいならそのままにしましょう。
 
@@ -167,13 +167,13 @@ make pollux/rev2:default:avrdude
 
 SK6812mini を半田付けしてゆきます。コの字の印のあるパッドが SK6812mini の Vcc になります。
 
-![sk68_soldering](sk68_soldering.JPG)
+![sk68_soldering](images/sk68_soldering.JPG)
 
 基板の個体差で LED が穴に落ちてしまう場合、マスキングテープで軽く固定するとつけやすくなります。
 
 熱で壊れやすいので、高くとも 270 度程度に抑えて半田付けします。
 
-![led_order](led_order.png)
+![led_order](images/led_order.png)
 
 LED は図のように直列に繋がっているので、１番から順に半田付けし、都度次のように動作確認すると安全です：
 
@@ -181,7 +181,7 @@ LED は図のように直列に繋がっているので、１番から順に半�
 2. USB ケーブルを刺して PC やモバイルバッテリーから電源を供給
 3. 光れば ok
 
-![sk68_light](sk68_light.JPG)
+![sk68_light](images/sk68_light.JPG)
 
 Pro Micro は写真のように、基板にプリントされた枠線に合わせて差し込みます。この時点ではどちらの枠を使っても構いません。
 
@@ -199,7 +199,7 @@ Pro Micro は写真のように、基板にプリントされた枠線に合わ�
 
 キー数分のダイオードをつけてゆきます。表面実装品のみ対応になります。
 
-![diode_soldering](diode_soldering.JPG)
+![diode_soldering](images/diode_soldering.JPG)
 
 基板に *コの字の印がある方がダイオードの目印のついている方（カソード）* です。
 
@@ -211,13 +211,13 @@ LED をつけた場合、ここからはコテの温度を戻して構いませ�
 
 リセットスイッチ、 TRRS ジャックをこの順にとりつけます。順番を間違えても致命傷にはなりませんが、先に背の高い部品をつけてしまうと、後から背の低い部品をつけるのは若干厄介です。
 
-![reset_trrs](reset_trrs.JPG)
+![reset_trrs](images/reset_trrs.JPG)
 
 基板の裏面に取り付け位置の目印があるので、ここに取り付けます。目印は二箇所ありますが、 *親指クラスターと同じ側* の目印を使用してください。 *左右で取り付け位置が逆になります* が、これが正しい状態です。
 
 基板の表側に *飛び出した足をスレスレでカットし、あまりハンダを盛らずに取り付けてください* 。厚みが出すぎてしまうと、このあとトッププレート取り付ける時に干渉してしまい厄介です。
 
-![reset_backside](reset_backside.JPG)
+![reset_backside](images/reset_backside.JPG)
 
 ### 動作確認
 
@@ -232,11 +232,11 @@ LED をつけた場合、ここからはコテの温度を戻して構いませ�
 
 ここまでの動作確認ができたら、 Pro Micro 用のピンヘッダを取り付けます。この作業以降、動作確認用のコンスルー仕様 Pro Micro は接続できなくなります。
 
-![pinheaders](pinheaders.JPG)
+![pinheaders](images/pinheaders.JPG)
 
 TRRS ジャック・リセットスイッチと同様に、 *表側に出た足はカットし、あまりハンダを盛らないように* 取り付けます。
 
-![pinheaders_backside](pinheaders_backside.JPG)
+![pinheaders_backside](images/pinheaders_backside.JPG)
 
 ピンヘッダの穴はコンスルーに対応するためにギリギリになっているので、失敗時のリカバリがかなり難しいです。向きを間違えないようにしてください。作者は間違えて一枚諦めました。
 
@@ -246,7 +246,7 @@ TRRS ジャック・リセットスイッチと同様に、 *表側に出た足�
 
 *トッププレートにキースイッチをはめ、* 基板とドッキングします。
 
-![pcb_with_plate](pcb_with_plate.JPG)
+![pcb_with_plate](images/pcb_with_plate.JPG)
 
 トッププレートを挟まずに直接スイッチを取り付けてしまうと、後からトッププートを組み込むことができなくなります。
 
@@ -254,7 +254,7 @@ TRRS ジャック・リセットスイッチと同様に、 *表側に出た足�
 
 *力技でスイッチをはめようとすると、プレートは簡単に割れます* 。ピンセットなどでスイッチのツメを押さえてやるとスムーズに入ります。武力行使は禁物です。
 
-![plate](plate.JPG)
+![plate](images/plate.JPG)
 
 基板からスイッチが浮いてしまわないよう、しっかり押し付けます。プレートは基板に押しつける必要はありません。基板とプレートの間に .2mm ほど隙間がある状態が正しいです。
 
@@ -270,13 +270,13 @@ TRRS ジャック・リセットスイッチと同様に、 *表側に出た足�
 
 図のようにケースを組み立てます・：
 
-![case_assemble](case_assemble.png)
+![case_assemble](images/case_assemble.png)
 
 下から順に、底板（つける場合）、ボトムプレート２枚、ミドルプレート２枚、基板＆トッププレート、トップフレーム２枚と重なります。
 
 *ボトムプレートも左右で微妙に形状が違います* 。並べて比べてみると、片方は Pro Micro の穴が少し広めに作られています。一方基板の方を見ると、左手の基板は Pro Micro が外形ギリギリに付いているのに対して、右手の基板の Pro Micro はやや余裕があります。これに合わせて、穴の少し広い方のボトムプレートを右手用に使用すると綺麗に組むことができます。
 
-![bottomplates](bottomplates.png)
+![bottomplates](images/bottomplates.png)
 
 これらを全て重ねて、ネジとナットで締めれば完成です。
 
@@ -286,13 +286,13 @@ TRRS ジャック・リセットスイッチと同様に、 *表側に出た足�
 
 Underglow を使用する場合、写真のように真下にマスキングテープなどを貼り付けると、光が拡散しボトムプレート全体を光らせることができます。
 
-![maskingtape](maskingtape.jpg)
+![maskingtape](images/maskingtape.jpg)
 
 ## 使い方 (デフォルトキーマップの紹介)
 
 デフォルトのキーマップは次のようになっています。 PC 側は US キーボードとして設定してください。
 
-![keymap](keymap.png)
+![keymap](images/keymap.png)
 
 単にキーを押すと、黒字のキーが入力されます。「Esc Alt」のように二つの機能が書かれているキーは、単独で押すと「Esc」として、長押ししながら他のキーを押すと「Alt」として機能します。「英数」「かな」は Mac 用のキー、「全角半角」は Windows 用のキーです。
 
