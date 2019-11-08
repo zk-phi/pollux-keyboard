@@ -1,7 +1,5 @@
 POLLUX (r2) Keyboard の紹介＆組み立てガイド
 
-(これは基板バージョン r2 ベースの紹介です)
-
 # 概要
 
 ![POLLUX](images/pollux.jpg)
